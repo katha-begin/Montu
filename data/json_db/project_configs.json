@@ -1,0 +1,134 @@
+[
+  {
+    "_id": "SWA",
+    "name": "Sky Wars Anthology",
+    "description": "VFX project for Sky Wars Anthology series",
+    "drive_mapping": {
+      "working_files": "V:",
+      "render_outputs": "W:",
+      "media_files": "J:",
+      "cache_files": "T:",
+      "backup_files": "B:"
+    },
+    "path_segments": {
+      "middle_path": "all/scene",
+      "version_dir": "version",
+      "work_dir": "work",
+      "publish_dir": "publish",
+      "cache_dir": "cache"
+    },
+    "templates": {
+      "working_file": "{drive_working}/{project}/{middle_path}/{episode}/{sequence_clean}/{shot_clean}/{task}/{version_dir}/{filename}",
+      "render_output": "{drive_render}/{project}/{middle_path}/{episode}/{sequence_clean}/{shot_clean}/{task}/{version_dir}/v{version}/",
+      "media_file": "{drive_media}/{project}/{middle_path}/{episode}/{sequence_clean}/{shot_clean}/{task}/{version_dir}/v{version}/media/",
+      "cache_file": "{drive_cache}/{project}/{middle_path}/{episode}/{sequence_clean}/{shot_clean}/{task}/cache/",
+      "submission": "{drive_render}/{project}/deliveries/{client}/{episode}/{sequence_clean}/{shot_clean}/{task}/v{client_version}/"
+    },
+    "filename_patterns": {
+      "maya_scene": "{episode}_{sequence_clean}_{shot_clean}_{task}_master_v{version}.ma",
+      "nuke_script": "{episode}_{sequence_clean}_{shot_clean}_{task}_master_v{version}.nk",
+      "houdini_scene": "{episode}_{sequence_clean}_{shot_clean}_{task}_master_v{version}.hip",
+      "blender_scene": "{episode}_{sequence_clean}_{shot_clean}_{task}_master_v{version}.blend",
+      "render_sequence": "{episode}_{sequence_clean}_{shot_clean}_{task}_v{version}.{frame}.{ext}",
+      "playblast": "{episode}_{sequence_clean}_{shot_clean}_{task}_v{version}_playblast.mov",
+      "thumbnail": "{episode}_{sequence_clean}_{shot_clean}_{task}_v{version}_thumb.jpg"
+    },
+    "name_cleaning_rules": {
+      "sequence_pattern": "^SWA_Ep[0-9]+_(.+)$",
+      "sequence_replacement": "\\1",
+      "shot_pattern": "^SWA_Ep[0-9]+_(.+)$",
+      "shot_replacement": "\\1",
+      "episode_pattern": "^(Ep[0-9]+)$",
+      "episode_replacement": "\\1"
+    },
+    "version_settings": {
+      "padding": 3,
+      "start_version": 1,
+      "increment": 1,
+      "format": "v{version:03d}"
+    },
+    "task_settings": {
+      "default_file_extensions": {
+        "lighting": ".ma",
+        "composite": ".nk",
+        "modeling": ".ma",
+        "rigging": ".ma",
+        "animation": ".ma",
+        "fx": ".hip",
+        "lookdev": ".ma",
+        "layout": ".ma"
+      },
+      "render_formats": {
+        "lighting": [
+          "exr",
+          "jpg"
+        ],
+        "composite": [
+          "exr",
+          "mov",
+          "jpg"
+        ],
+        "fx": [
+          "exr",
+          "mov"
+        ],
+        "lookdev": [
+          "exr",
+          "jpg"
+        ]
+      }
+    },
+    "milestones": [
+      "not_started",
+      "single_frame",
+      "low_quality",
+      "final_render",
+      "final_comp",
+      "approved"
+    ],
+    "task_types": [
+      "modeling",
+      "rigging",
+      "animation",
+      "layout",
+      "lighting",
+      "composite",
+      "fx",
+      "lookdev"
+    ],
+    "priority_levels": [
+      "low",
+      "medium",
+      "high",
+      "urgent"
+    ],
+    "client_settings": {
+      "version_reset": true,
+      "default_client": "SWA_Client",
+      "delivery_formats": [
+        "mov",
+        "mp4"
+      ],
+      "approval_required": true
+    },
+    "platform_settings": {
+      "windows": {
+        "working_root": "V:/SWA",
+        "render_root": "W:/SWA",
+        "media_root": "J:/SWA"
+      },
+      "linux": {
+        "working_root": "/mnt/projects/SWA",
+        "render_root": "/mnt/renders/SWA",
+        "media_root": "/mnt/media/SWA"
+      }
+    },
+    "frame_settings": {
+      "padding": 4,
+      "default_start": 1001,
+      "default_fps": 24
+    },
+    "_created_at": "2025-08-03T16:45:00.000000",
+    "_updated_at": "2025-08-03T16:45:00.000000"
+  }
+]
