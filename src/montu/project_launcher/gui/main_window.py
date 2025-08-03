@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 from .project_selector import ProjectSelector
 from .task_list_widget import TaskListWidget
 from .file_browser_widget import FileBrowserWidget
+from .version_notes_widget import VersionNotesWidget
 from ..models.project_model import ProjectModel
 
 
@@ -89,13 +90,25 @@ class ProjectLauncherMainWindow(QMainWindow):
         # Set left splitter proportions
         left_splitter.setSizes([200, 600])
 
-        # Right side: File browser
+        # Right side: File browser and version notes in vertical splitter
+        right_splitter = QSplitter(Qt.Vertical)
+
+        # File browser (top right)
         self.file_browser = FileBrowserWidget()
         self.file_browser.set_project_model(self.project_model)
+        right_splitter.addWidget(self.file_browser)
+
+        # Version notes (bottom right)
+        self.version_notes = VersionNotesWidget()
+        self.version_notes.set_project_model(self.project_model)
+        right_splitter.addWidget(self.version_notes)
+
+        # Set right splitter proportions (70% file browser, 30% version notes)
+        right_splitter.setSizes([420, 180])
 
         # Add to main splitter
         main_splitter.addWidget(left_splitter)
-        main_splitter.addWidget(self.file_browser)
+        main_splitter.addWidget(right_splitter)
 
         # Set main splitter proportions (70% left, 30% right)
         main_splitter.setSizes([1120, 480])
@@ -170,6 +183,7 @@ class ProjectLauncherMainWindow(QMainWindow):
         # Task list connections
         self.task_list.taskSelected.connect(self.on_task_selected)
         self.task_list.taskStatusChanged.connect(self.update_task_status)
+        self.task_list.taskPriorityChanged.connect(self.update_task_priority)
         self.task_list.openWorkingFile.connect(self.open_working_file)
         self.task_list.refreshRequested.connect(self.refresh_tasks)
 
@@ -177,6 +191,9 @@ class ProjectLauncherMainWindow(QMainWindow):
         self.file_browser.fileSelected.connect(self.on_file_selected)
         self.file_browser.fileOpened.connect(self.on_file_opened)
         self.file_browser.refreshRequested.connect(self.refresh_file_browser)
+
+        # Version notes connections
+        self.file_browser.fileSelected.connect(self.version_notes.set_selected_file)
     
     def load_available_projects(self):
         """Load available projects from database."""
@@ -332,6 +349,31 @@ class ProjectLauncherMainWindow(QMainWindow):
         except Exception as e:
             self.show_error("Error opening working file", str(e))
         
+        finally:
+            self.hide_progress()
+
+    def update_task_priority(self, task_id: str, priority: str):
+        """Update task priority."""
+        try:
+            self.show_progress("Updating task priority...")
+
+            success = self.project_model.update_task_priority(task_id, priority)
+
+            if success:
+                # Refresh the entire task list to ensure consistency
+                tasks = self.project_model.get_tasks()
+                self.task_list.set_tasks(tasks)
+
+                # Update status display
+                self.update_status_display()
+
+                self.status_bar.showMessage(f"Updated task priority to {priority}", 3000)
+            else:
+                self.show_error("Failed to update priority", f"Could not update task {task_id}")
+
+        except Exception as e:
+            self.show_error("Error updating task priority", str(e))
+
         finally:
             self.hide_progress()
 

@@ -9,10 +9,12 @@ from .main_window import ProjectLauncherMainWindow
 from .task_list_widget import TaskListWidget
 from .project_selector import ProjectSelector
 from .file_browser_widget import FileBrowserWidget
+from .version_notes_widget import VersionNotesWidget
 
 __all__ = [
     'ProjectLauncherMainWindow',
     'TaskListWidget',
     'ProjectSelector',
-    'FileBrowserWidget'
+    'FileBrowserWidget',
+    'VersionNotesWidget'
 ]

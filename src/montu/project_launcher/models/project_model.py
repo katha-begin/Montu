@@ -180,8 +180,45 @@ class ProjectModel:
         except Exception as e:
             print(f"Error updating task status: {e}")
             return False
-    
-    def generate_task_paths(self, task_id: str, version: str = "001", 
+
+    def update_task_priority(self, task_id: str, priority: str) -> bool:
+        """
+        Update task priority in database and local cache.
+
+        Args:
+            task_id: Task identifier
+            priority: New priority value (low, medium, high, urgent)
+
+        Returns:
+            True if update successful
+        """
+        try:
+            # Update in database
+            success = self.db.update_one(
+                'tasks',
+                {'_id': task_id},
+                {'$set': {'priority': priority, '_updated_at': datetime.now().isoformat()}}
+            )
+
+            if success:
+                # Update local cache
+                for task in self.tasks:
+                    if task.get('_id') == task_id:
+                        task['priority'] = priority
+                        task['_updated_at'] = datetime.now().isoformat()
+                        break
+
+                print(f"Updated task {task_id} priority to {priority}")
+                return True
+            else:
+                print(f"Failed to update task {task_id} priority in database")
+                return False
+
+        except Exception as e:
+            print(f"Error updating task priority: {e}")
+            return False
+
+    def generate_task_paths(self, task_id: str, version: str = "001",
                            file_type: str = "maya_scene") -> Optional[Dict[str, str]]:
         """
         Generate all paths for a task using the PathBuilder Engine.

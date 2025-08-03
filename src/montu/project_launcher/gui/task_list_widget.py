@@ -28,6 +28,7 @@ class TaskListWidget(QWidget):
     # Signals
     taskSelected = Signal(str)           # task_id
     taskStatusChanged = Signal(str, str) # task_id, new_status
+    taskPriorityChanged = Signal(str, str) # task_id, new_priority
     openWorkingFile = Signal(str)        # task_id
     refreshRequested = Signal()
     
@@ -300,7 +301,21 @@ class TaskListWidget(QWidget):
             action = QAction(display_name, self)
             action.triggered.connect(lambda checked, s=status_value: self.update_task_status(s))
             status_menu.addAction(action)
-        
+
+        # Priority update actions
+        priority_menu = menu.addMenu("Change Priority")
+        priority_options = [
+            ('Low', 'low'),
+            ('Medium', 'medium'),
+            ('High', 'high'),
+            ('Urgent', 'urgent')
+        ]
+
+        for display_name, priority_value in priority_options:
+            action = QAction(display_name, self)
+            action.triggered.connect(lambda checked, p=priority_value: self.update_task_priority(p))
+            priority_menu.addAction(action)
+
         menu.exec(self.task_table.mapToGlobal(position))
     
     def on_task_double_clicked(self, index):
@@ -339,6 +354,32 @@ class TaskListWidget(QWidget):
         """Update status for selected task."""
         if self.selected_task_id:
             self.taskStatusChanged.emit(self.selected_task_id, status)
+
+    def update_task_priority(self, priority: str):
+        """Update priority for selected task."""
+        if not self.selected_task_id:
+            return
+
+        # Get current task info
+        task = self.task_model.get_task_by_id(self.selected_task_id)
+        if not task:
+            return
+
+        task_display = f"{task.get('shot', 'Unknown')} - {task.get('task', 'Unknown')}"
+
+        # Show confirmation dialog for priority changes
+        reply = QMessageBox.question(
+            self,
+            "Change Priority",
+            f"Change priority for '{task_display}' to {priority.title()}?\n\n"
+            "This may affect task scheduling and resource allocation.",
+            QMessageBox.Yes | QMessageBox.No,
+            QMessageBox.No
+        )
+
+        if reply == QMessageBox.Yes:
+            # Emit signal to update priority (similar to status update)
+            self.taskPriorityChanged.emit(self.selected_task_id, priority)
     
     def request_refresh(self):
         """Request task list refresh."""
