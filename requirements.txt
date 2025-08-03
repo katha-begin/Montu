@@ -1,0 +1,56 @@
+# Montu Manager Ecosystem - Python Dependencies
+
+# Core GUI Framework
+PySide6>=6.5.0
+
+# Database
+pymongo>=4.5.0
+motor>=3.3.0  # Async MongoDB driver
+
+# Data Processing
+pandas>=2.0.0  # For CSV processing in Task Creator
+pydantic>=2.0.0  # Data validation
+
+# File System & Path Handling
+pathlib2>=2.3.7
+watchdog>=3.0.0  # File system monitoring
+
+# Media Processing (for Review Application)
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Networking & API
+requests>=2.31.0
+fastapi>=0.100.0  # Future API server
+uvicorn>=0.23.0   # ASGI server
+
+# Development & Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-qt>=4.2.0  # PySide6 testing
+black>=23.0.0      # Code formatting
+flake8>=6.0.0      # Linting
+mypy>=1.5.0        # Type checking
+
+# Build & Packaging
+PyInstaller>=5.13.0
+setuptools>=68.0.0
+wheel>=0.41.0
+
+# Documentation
+sphinx>=7.1.0
+sphinx-rtd-theme>=1.3.0
+
+# Utilities
+python-dotenv>=1.0.0  # Environment variables
+click>=8.1.0          # CLI framework
+rich>=13.5.0          # Rich terminal output
+loguru>=0.7.0         # Enhanced logging
+
+# DCC Integration Dependencies
+# Maya Python API (installed with Maya)
+# Nuke Python API (installed with Nuke)
+
+# Platform-specific dependencies
+# Windows: pywin32>=306
+# Linux: python3-dev, python3-tk
