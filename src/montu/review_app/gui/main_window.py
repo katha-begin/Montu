@@ -335,13 +335,18 @@ class ReviewAppMainWindow(QMainWindow):
             media_item = current_item.data(Qt.UserRole)
             self.current_media_item = media_item
             
-            # Update media player
-            media_path = media_item.get('file_path', '')
-            if media_path and os.path.exists(media_path):
-                self.media_player.load_media(media_path)
+            # Update media player with comprehensive metadata
+            if hasattr(self.media_player, 'load_media_with_metadata'):
+                # Use enhanced media loading with metadata
+                self.media_player.load_media_with_metadata(media_item)
             else:
-                self.media_player.clear_media()
-                self.status_bar.showMessage("Media file not found")
+                # Fallback to basic media loading
+                media_path = media_item.get('file_path', '')
+                if media_path and os.path.exists(media_path):
+                    self.media_player.load_media(media_path)
+                else:
+                    self.media_player.clear_media()
+                    self.status_bar.showMessage("Media file not found")
             
             # Update annotation widget
             self.annotation_widget.set_media_item(media_item)
