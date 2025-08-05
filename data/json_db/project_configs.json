@@ -6,9 +6,9 @@
     "drive_mapping": {
       "working_files": "V:",
       "render_outputs": "W:",
-      "media_files": "J:",
-      "cache_files": "T:",
-      "backup_files": "B:"
+      "media_files": "E:",
+      "cache_files": "E:",
+      "backup_files": "E:"
     },
     "path_segments": {
       "middle_path": "all/scene",
@@ -50,7 +50,7 @@
     "task_settings": {
       "default_file_extensions": {
         "lighting": ".ma",
-        "composite": ".nk",
+        "comp": ".nk",
         "modeling": ".ma",
         "rigging": ".ma",
         "animation": ".ma",
@@ -63,7 +63,7 @@
           "exr",
           "jpg"
         ],
-        "composite": [
+        "comp": [
           "exr",
           "mov",
           "jpg"
@@ -92,7 +92,7 @@
       "animation",
       "layout",
       "lighting",
-      "composite",
+      "comp",
       "fx",
       "lookdev"
     ],

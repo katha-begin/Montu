@@ -9,7 +9,7 @@ from typing import Dict, List, Any, Optional
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTableView, QHeaderView,
     QLineEdit, QComboBox, QPushButton, QLabel, QGroupBox,
-    QMenu, QMessageBox, QAbstractItemView
+    QMenu, QMessageBox, QAbstractItemView, QCheckBox
 )
 from PySide6.QtCore import Qt, Signal, QTimer
 from PySide6.QtGui import QAction
@@ -43,17 +43,17 @@ class TaskListWidget(QWidget):
         ('Approved', 'approved')
     ]
     
-    # Task type options for filtering
-    TASK_TYPE_OPTIONS = [
+    # Default task type options (fallback if config not available)
+    DEFAULT_TASK_TYPE_OPTIONS = [
         ('All Tasks', ''),
-        ('Lighting', 'Lighting'),
-        ('Composite', 'Composite'),
-        ('Modeling', 'Modeling'),
-        ('Rigging', 'Rigging'),
-        ('Animation', 'Animation'),
-        ('FX', 'FX'),
-        ('Layout', 'Layout'),
-        ('Lookdev', 'Lookdev')
+        ('Lighting', 'lighting'),
+        ('Composite', 'comp'),
+        ('Modeling', 'modeling'),
+        ('Rigging', 'rigging'),
+        ('Animation', 'animation'),
+        ('FX', 'fx'),
+        ('Layout', 'layout'),
+        ('Lookdev', 'lookdev')
     ]
     
     def __init__(self, parent=None):
@@ -66,11 +66,18 @@ class TaskListWidget(QWidget):
         # State
         self.current_filters = {}
         self.selected_task_id: Optional[str] = None
-        
+        self.show_archived_tasks = False  # Default: hide archived/cancelled tasks
+
+        # Current task type options (loaded from config)
+        self.current_task_type_options = self.DEFAULT_TASK_TYPE_OPTIONS.copy()
+
         # Setup UI and connections
         self.setup_ui()
         self.setup_connections()
-        
+
+        # Apply default filter to hide cancelled tasks
+        self.apply_default_filters()
+
         # Setup refresh timer for auto-refresh
         self.refresh_timer = QTimer()
         self.refresh_timer.timeout.connect(self.auto_refresh)
@@ -101,16 +108,21 @@ class TaskListWidget(QWidget):
         # Task type filter
         filters_layout.addWidget(QLabel("Task:"))
         self.task_type_filter = QComboBox()
-        for display_name, value in self.TASK_TYPE_OPTIONS:
-            self.task_type_filter.addItem(display_name, value)
+        self.populate_task_type_filter()
         filters_layout.addWidget(self.task_type_filter)
         
         # Clear filters button
         self.clear_filters_button = QPushButton("Clear Filters")
         filters_layout.addWidget(self.clear_filters_button)
-        
+
         filters_layout.addStretch()
-        
+
+        # Show archived tasks checkbox
+        self.show_archived_checkbox = QCheckBox("Show Archived Tasks")
+        self.show_archived_checkbox.setToolTip("Show tasks with 'cancelled' status (archived tasks)")
+        self.show_archived_checkbox.setChecked(self.show_archived_tasks)
+        filters_layout.addWidget(self.show_archived_checkbox)
+
         # Refresh button
         self.refresh_button = QPushButton("Refresh")
         filters_layout.addWidget(self.refresh_button)
@@ -181,6 +193,7 @@ class TaskListWidget(QWidget):
         self.status_filter.currentTextChanged.connect(self.apply_filters)
         self.task_type_filter.currentTextChanged.connect(self.apply_filters)
         self.clear_filters_button.clicked.connect(self.clear_filters)
+        self.show_archived_checkbox.toggled.connect(self.on_show_archived_toggled)
         
         # Table connections
         self.task_table.selectionModel().selectionChanged.connect(self.on_selection_changed)
@@ -224,30 +237,43 @@ class TaskListWidget(QWidget):
         if task_type_value:  # Only add if not empty string
             filters['task'] = task_type_value
 
+        # Archived tasks filter (hide cancelled tasks by default)
+        if not self.show_archived_tasks:
+            filters['exclude_cancelled'] = True
+
         self.current_filters = filters
         self.task_model.apply_filters(filters)
         self.task_model.refresh_filters()
         self.update_task_count()
     
     def clear_filters(self):
-        """Clear all filters."""
+        """Clear all filters except archived tasks filter."""
         self.search_edit.clear()
         self.status_filter.setCurrentIndex(0)
         self.task_type_filter.setCurrentIndex(0)
-        self.current_filters = {}
-        self.task_model.apply_filters({})
-        self.task_model.refresh_filters()
-        self.update_task_count()
+        # Keep archived tasks filter state - don't reset it
+        self.apply_filters()  # Reapply with current archived setting
     
     def update_task_count(self):
         """Update task count display."""
         total_tasks = len(self.task_model.tasks)
         filtered_tasks = len(self.task_model.filtered_tasks)
-        
+
+        # Count archived tasks
+        archived_count = sum(1 for task in self.task_model.tasks if task.get('status') == 'cancelled')
+
         if self.current_filters:
-            self.task_count_label.setText(f"Showing {filtered_tasks} of {total_tasks} tasks")
+            if not self.show_archived_tasks and archived_count > 0:
+                self.task_count_label.setText(
+                    f"Showing {filtered_tasks} of {total_tasks} tasks ({archived_count} archived)"
+                )
+            else:
+                self.task_count_label.setText(f"Showing {filtered_tasks} of {total_tasks} tasks")
         else:
-            self.task_count_label.setText(f"{total_tasks} tasks")
+            if not self.show_archived_tasks and archived_count > 0:
+                self.task_count_label.setText(f"{total_tasks} tasks ({archived_count} archived)")
+            else:
+                self.task_count_label.setText(f"{total_tasks} tasks")
     
     def on_selection_changed(self):
         """Handle task selection change."""
@@ -402,3 +428,85 @@ class TaskListWidget(QWidget):
     def get_selected_task_id(self) -> Optional[str]:
         """Get currently selected task ID."""
         return self.selected_task_id
+
+    def populate_task_type_filter(self):
+        """Populate task type filter with current options."""
+        self.task_type_filter.clear()
+        for display_name, value in self.current_task_type_options:
+            self.task_type_filter.addItem(display_name, value)
+
+    def load_task_types_from_config(self, project_config: Dict[str, Any]):
+        """
+        Load task types from project configuration.
+
+        Args:
+            project_config: Project configuration dictionary
+        """
+        try:
+            task_types = project_config.get('task_types', [])
+            if task_types:
+                # Create new task type options from config
+                new_options = [('All Tasks', '')]
+                for task_type in task_types:
+                    # Capitalize first letter for display
+                    display_name = task_type.capitalize()
+                    new_options.append((display_name, task_type))
+
+                self.current_task_type_options = new_options
+                self.populate_task_type_filter()
+
+                print(f"Loaded {len(task_types)} task types from configuration: {task_types}")
+            else:
+                print("No task types found in configuration, using defaults")
+
+        except Exception as e:
+            print(f"Error loading task types from config: {e}")
+            # Keep using default options
+
+    def refresh_configuration(self):
+        """Refresh configuration from database."""
+        try:
+            # Import here to avoid circular imports
+            from ...shared.json_database import JSONDatabase
+
+            db = JSONDatabase()
+
+            # Clear cache to force reload
+            db.clear_path_builder_cache()
+
+            # Load project configuration
+            project_configs = db.find('project_configs', {})
+            if project_configs:
+                project_config = project_configs[0]  # Use first available project
+                self.load_task_types_from_config(project_config)
+                print("Configuration refreshed successfully")
+            else:
+                print("No project configuration found")
+
+        except Exception as e:
+            print(f"Error refreshing configuration: {e}")
+
+    def apply_default_filters(self):
+        """Apply default filters on initialization."""
+        # Hide cancelled/archived tasks by default
+        self.apply_filters()
+
+    def on_show_archived_toggled(self, checked: bool):
+        """Handle show archived tasks checkbox toggle."""
+        self.show_archived_tasks = checked
+        self.apply_filters()
+
+        # Update status message
+        if checked:
+            self.parent().statusBar().showMessage("Showing archived tasks", 2000)
+        else:
+            self.parent().statusBar().showMessage("Hiding archived tasks", 2000)
+
+    def get_archived_task_count(self) -> int:
+        """Get count of archived (cancelled) tasks."""
+        return sum(1 for task in self.task_model.tasks if task.get('status') == 'cancelled')
+
+    def is_task_archived(self, task_id: str) -> bool:
+        """Check if a task is archived (cancelled)."""
+        task = self.task_model.get_task_by_id(task_id)
+        return task and task.get('status') == 'cancelled'

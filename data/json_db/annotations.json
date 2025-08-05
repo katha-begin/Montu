@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "annotation_6f39200c-6ca2-486e-b13f-986e7cbcf8a1_20250805_112825",
+    "media_id": "6f39200c-6ca2-486e-b13f-986e7cbcf8a1",
+    "annotation_type": "note",
+    "content": "Color balance looks good, but shadows need adjustment",
+    "position": {
+      "x": 100,
+      "y": 200
+    },
+    "author": "Review Supervisor",
+    "created_at": "2025-08-05T11:28:25.529298",
+    "status": "active",
+    "_created_at": "2025-08-05T11:28:25.530298",
+    "_updated_at": "2025-08-05T11:28:25.530298"
+  }
+]

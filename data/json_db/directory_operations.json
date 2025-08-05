@@ -1,0 +1,2576 @@
+[
+  {
+    "operation_type": "create_directories",
+    "task_count": 5,
+    "directories_created": 20,
+    "timestamp": "2024-08-04T14:30:00",
+    "_id": "6b81a22f-a2a8-4e9f-8ac2-b62ae41b02de",
+    "_created_at": "2025-08-04T10:59:12.998047",
+    "_updated_at": "2025-08-04T10:59:12.998047"
+  },
+  {
+    "_id": "dir_ops_2025-08-04T11:48:48.194744",
+    "timestamp": "2025-08-04T11:48:48.194744",
+    "operations": [
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0020_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0020_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0020_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0020_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0020_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0020_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0020_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0020_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0040_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0040_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0040_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0040_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0040_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0040_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0040_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0040_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0050_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0050_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0050_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0050_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0050_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0050_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0050_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0050_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0060_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0060_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0060_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0060_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0060_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0060_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0060_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0060_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0070_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0070_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0070_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0070_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0070_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0070_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0070_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0010_sh0070_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0080_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0080_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0080_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0080_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0080_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0080_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0080_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0080_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0090_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0090_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0090_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0090_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0090_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0090_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0090_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0090_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100a_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100a_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100a_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100a_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100a_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100a_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100a_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0100a_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0110_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0110_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0110_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0110_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0110_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0110_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0110_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0110_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0120_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0120_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0120_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0120_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0120_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0120_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0120_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0020_sh0120_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0030_sh0130_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0030_sh0130_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0030_sh0130_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0030_sh0130_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0030_sh0130_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0030_sh0130_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0030_sh0130_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0030_sh0130_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0140_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0140_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0140_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0140_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0140_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0140_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0140_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0140_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0150_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0150_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0150_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0150_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0150_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0150_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0150_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0150_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0160_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0160_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0160_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0160_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0160_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0160_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0160_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0160_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0170_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0170_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0170_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0170_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0170_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0170_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0170_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0170_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0180_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0180_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0180_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0180_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0180_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0180_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0180_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0180_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0190_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0190_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0190_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0190_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0190_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0190_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0190_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0040_sh0190_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0200_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0200_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0200_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0200_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0200_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0200_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0200_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0200_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0210_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0210_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0210_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0210_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0210_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0210_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\comp\\version\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0210_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:48:48.194744",
+        "task_id": "ep00_sq0050_sh0210_comp",
+        "success": true
+      }
+    ],
+    "created_at": "2025-08-04T11:48:49.578889",
+    "_created_at": "2025-08-04T11:48:49.578889",
+    "_updated_at": "2025-08-04T11:48:49.578889"
+  },
+  {
+    "_id": "dir_ops_2025-08-04T11:49:55.609715",
+    "timestamp": "2025-08-04T11:49:55.609715",
+    "operations": [
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0020_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0020_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0020_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0020_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0020_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0020_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0020_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0020\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0020_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0040_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0040_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0040_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0040_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0040_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0040_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0040_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0040\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0040_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0050_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0050_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0050_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0050_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0050_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0050_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0050_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0050\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0050_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0060_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0060_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0060_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0060_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0060_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0060_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0060_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0060\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0060_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0070_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0070_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0070_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0070_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0070_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0070_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0070_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0070\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0010_sh0070_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0080_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0080_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0080_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0080_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0080_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0080_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0080_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0080\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0080_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0090_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0090_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0090_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0090_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0090_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0090_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0090_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0090\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0090_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100a_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100a_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100a_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100a_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100a_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100a_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100a_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0100A\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0100a_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0110_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0110_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0110_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0110_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0110_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0110_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0110_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0110\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0110_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0120_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0120_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0120_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0120_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0120_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0120_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0120_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0020\\SH0120\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0020_sh0120_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0030_sh0130_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0030_sh0130_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0030_sh0130_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0030_sh0130_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0030_sh0130_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0030_sh0130_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0030_sh0130_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0030\\SH0130\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0030_sh0130_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0140_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0140_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0140_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0140_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0140_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0140_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0140_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0140\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0140_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0150_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0150_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0150_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0150_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0150_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0150_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0150_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0150\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0150_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0160_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0160_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0160_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0160_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0160_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0160_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0160_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0160\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0160_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0170_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0170_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0170_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0170_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0170_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0170_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0170_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0170\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0170_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0180_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0180_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0180_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0180_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0180_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0180_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0180_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0180\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0180_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0190_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0190_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0190_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0190_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0190_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0190_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0190_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0040\\SH0190\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0040_sh0190_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0200_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0200_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0200_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0200_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0200_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0200_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0200_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0200\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0200_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0210_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0210_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\lighting\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0210_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\lighting\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0210_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0210_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0210_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\comp\\version\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0210_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0050\\SH0210\\comp\\cache\\",
+        "timestamp": "2025-08-04T11:49:55.609715",
+        "task_id": "ep00_sq0050_sh0210_comp",
+        "success": true
+      }
+    ],
+    "created_at": "2025-08-04T11:49:55.620753",
+    "_created_at": "2025-08-04T11:49:55.621751",
+    "_updated_at": "2025-08-04T11:49:55.621751"
+  },
+  {
+    "_id": "dir_ops_2025-08-04T16:02:24.690195",
+    "timestamp": "2025-08-04T16:02:24.690195",
+    "operations": [
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T16:02:24.690195",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T16:02:24.690195",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T16:02:24.690195",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\cache\\",
+        "timestamp": "2025-08-04T16:02:24.690195",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\version\\",
+        "timestamp": "2025-08-04T16:02:24.690195",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\version\\",
+        "timestamp": "2025-08-04T16:02:24.690195",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\version\\",
+        "timestamp": "2025-08-04T16:02:24.690195",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\cache\\",
+        "timestamp": "2025-08-04T16:02:24.690195",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      }
+    ],
+    "created_at": "2025-08-04T16:02:28.416634",
+    "_created_at": "2025-08-04T16:02:28.420151",
+    "_updated_at": "2025-08-04T16:02:28.420151"
+  },
+  {
+    "_id": "dir_ops_2025-08-04T16:06:33.453164",
+    "timestamp": "2025-08-04T16:06:33.453164",
+    "operations": [
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T16:06:33.453164",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T16:06:33.453164",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T16:06:33.453164",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\cache\\",
+        "timestamp": "2025-08-04T16:06:33.453164",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\version\\",
+        "timestamp": "2025-08-04T16:06:33.453164",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\version\\",
+        "timestamp": "2025-08-04T16:06:33.453164",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\version\\",
+        "timestamp": "2025-08-04T16:06:33.453164",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\cache\\",
+        "timestamp": "2025-08-04T16:06:33.453164",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      }
+    ],
+    "created_at": "2025-08-04T16:06:33.459207",
+    "_created_at": "2025-08-04T16:06:33.464216",
+    "_updated_at": "2025-08-04T16:06:33.464216"
+  },
+  {
+    "_id": "dir_ops_2025-08-04T16:07:18.531038",
+    "timestamp": "2025-08-04T16:07:18.531038",
+    "operations": [
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T16:07:18.531038",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T16:07:18.531038",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\version\\",
+        "timestamp": "2025-08-04T16:07:18.531038",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\lighting\\cache\\",
+        "timestamp": "2025-08-04T16:07:18.531038",
+        "task_id": "ep00_sq0010_sh0030_lighting",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "V:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\version\\",
+        "timestamp": "2025-08-04T16:07:18.531038",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "W:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\version\\",
+        "timestamp": "2025-08-04T16:07:18.531038",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\version\\",
+        "timestamp": "2025-08-04T16:07:18.531038",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      },
+      {
+        "operation_type": "create_dir",
+        "path": "E:\\SWA\\all\\scene\\Ep00\\sq0010\\SH0030\\composite\\cache\\",
+        "timestamp": "2025-08-04T16:07:18.531038",
+        "task_id": "ep00_sq0010_sh0030_comp",
+        "success": true
+      }
+    ],
+    "created_at": "2025-08-04T16:07:18.819894",
+    "_created_at": "2025-08-04T16:07:18.820903",
+    "_updated_at": "2025-08-04T16:07:18.820903"
+  }
+]

@@ -136,10 +136,17 @@ class ProjectLauncherMainWindow(QMainWindow):
         
         # Project menu
         project_menu = menubar.addMenu("Project")
-        
+
         reload_project_action = QAction("Reload Current Project", self)
         reload_project_action.triggered.connect(self.reload_current_project)
         project_menu.addAction(reload_project_action)
+
+        project_menu.addSeparator()
+
+        refresh_config_action = QAction("Refresh Configuration", self)
+        refresh_config_action.setShortcut("Ctrl+R")
+        refresh_config_action.triggered.connect(self.refresh_configuration)
+        project_menu.addAction(refresh_config_action)
         
         # Task menu
         task_menu = menubar.addMenu("Tasks")
@@ -289,6 +296,29 @@ class ProjectLauncherMainWindow(QMainWindow):
         self.load_available_projects()
         if self.current_project_id:
             self.refresh_tasks()
+
+    def refresh_configuration(self):
+        """Refresh project configuration and clear caches."""
+        try:
+            self.show_progress("Refreshing configuration...")
+
+            # Clear database cache
+            self.project_model.db.clear_path_builder_cache()
+
+            # Refresh task list configuration
+            self.task_list.refresh_configuration()
+
+            # Reload current project to pick up new configuration
+            if self.current_project_id:
+                self.load_project(self.current_project_id)
+
+            self.status_bar.showMessage("Configuration refreshed successfully", 3000)
+
+        except Exception as e:
+            self.show_error("Configuration Refresh Failed", f"Failed to refresh configuration: {str(e)}")
+
+        finally:
+            self.hide_progress()
     
     def on_task_selected(self, task_id: str):
         """Handle task selection."""

@@ -205,8 +205,8 @@ class VersionNotesWidget(QWidget):
             
             # Look for task ID pattern in path
             for part in reversed(path_parts):
-                if '_' in part and any(task_type in part.lower() for task_type in 
-                                     ['lighting', 'composite', 'modeling', 'rigging', 'animation']):
+                if '_' in part and any(task_type in part.lower() for task_type in
+                                     ['lighting', 'comp', 'modeling', 'rigging', 'animation']):
                     # This might be a task ID
                     self.current_task_id = part.replace('.ma', '').replace('.nk', '').replace('.hip', '')
                     break
@@ -304,7 +304,7 @@ class VersionNotesWidget(QWidget):
             if task_type == 'lighting':
                 version_data['artist_note'] = "Final lighting pass completed"
                 version_data['review_note'] = "Approved by lighting supervisor"
-            elif task_type == 'composite':
+            elif task_type == 'comp':
                 version_data['artist_note'] = "Final composite with all elements"
                 version_data['review_note'] = "Client approved for delivery"
             else:

@@ -104,6 +104,49 @@ class TaskRecord:
             'episode_clean': self.episode_clean
         }
 
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'TaskRecord':
+        """Create TaskRecord from dictionary (for database loading)."""
+        # Handle both _id and task_id fields
+        task_id = data.get('_id') or data.get('task_id', '')
+
+        # Create TaskRecord with required fields
+        return cls(
+            task_id=task_id,
+            project=data.get('project', ''),
+            type=data.get('type', 'shot'),
+            episode=data.get('episode', ''),
+            sequence=data.get('sequence', ''),
+            shot=data.get('shot', ''),
+            task=data.get('task', ''),
+            artist=data.get('artist', ''),
+            status=data.get('status', 'not_started'),
+            milestone=data.get('milestone', 'not_started'),
+            priority=data.get('priority', 'medium'),
+            frame_range=data.get('frame_range', {'start': 1001, 'end': 1001}),
+            estimated_duration_hours=data.get('estimated_duration_hours', 8.0),
+            start_time=data.get('start_time'),
+            deadline=data.get('deadline'),
+            actual_time_logged=data.get('actual_time_logged', 0.0),
+            milestone_note=data.get('milestone_note', ''),
+            versions=data.get('versions', []),
+            client_submission_history=data.get('client_submission_history', []),
+
+            # Enhanced fields
+            current_version=data.get('current_version', 'v001'),
+            published_version=data.get('published_version', 'v000'),
+            file_extension=data.get('file_extension', '.ma'),
+            master_file=data.get('master_file', True),
+            working_file_path=data.get('working_file_path', ''),
+            render_output_path=data.get('render_output_path', ''),
+            media_file_path=data.get('media_file_path', ''),
+            cache_file_path=data.get('cache_file_path', ''),
+            filename=data.get('filename', ''),
+            sequence_clean=data.get('sequence_clean', ''),
+            shot_clean=data.get('shot_clean', ''),
+            episode_clean=data.get('episode_clean', '')
+        )
+
 
 class CSVParser:
     """Intelligent CSV parser for task creation."""
@@ -133,6 +176,34 @@ class CSVParser:
             'layout': '.ma',
             'texturing': '.ma',
             'surfacing': '.ma'
+        }
+
+        # Task name mapping for CSV import (maps CSV values to configured task types)
+        self.task_name_mapping = {
+            'composite': 'comp',
+            'Composite': 'comp',
+            'COMPOSITE': 'comp',
+            'lighting': 'lighting',
+            'Lighting': 'lighting',
+            'LIGHTING': 'lighting',
+            'modeling': 'modeling',
+            'Modeling': 'modeling',
+            'MODELING': 'modeling',
+            'rigging': 'rigging',
+            'Rigging': 'rigging',
+            'RIGGING': 'rigging',
+            'animation': 'animation',
+            'Animation': 'animation',
+            'ANIMATION': 'animation',
+            'fx': 'fx',
+            'FX': 'fx',
+            'Fx': 'fx',
+            'lookdev': 'lookdev',
+            'Lookdev': 'lookdev',
+            'LOOKDEV': 'lookdev',
+            'layout': 'layout',
+            'Layout': 'layout',
+            'LAYOUT': 'layout'
         }
     
     def detect_naming_patterns(self, sample_data: List[Dict[str, Any]]) -> List[NamingPattern]:
@@ -305,10 +376,15 @@ class CSVParser:
         
         # Extract basic information
         project = str(row.get('Project', 'Unknown'))
-        episode = str(row.get('Episode', 'Unknown'))
-        sequence = str(row.get('Sequence', 'Unknown'))
-        shot = str(row.get('Shot', 'Unknown'))
+        episode_raw = str(row.get('Episode', 'Unknown'))
+        sequence_raw = str(row.get('Sequence', 'Unknown'))
+        shot_raw = str(row.get('Shot', 'Unknown'))
         type_field = str(row.get('Type', 'shot')).lower()
+
+        # Apply naming pattern to extract the correct parts
+        episode = self.apply_naming_pattern(episode_raw, naming_pattern.episode_pattern, naming_pattern.delimiter)
+        sequence = self.apply_naming_pattern(sequence_raw, naming_pattern.sequence_pattern, naming_pattern.delimiter)
+        shot = self.apply_naming_pattern(shot_raw, naming_pattern.shot_pattern, naming_pattern.delimiter)
         
         # Extract frame range
         frame_range = {
@@ -340,7 +416,9 @@ class CSVParser:
                     duration_index += 1
                 
                 if task_name and task_name.strip() and task_name != 'nan':
-                    task_pairs.append((task_name.strip(), duration))
+                    # Normalize task name to match configuration
+                    normalized_task_name = self.normalize_task_name(task_name.strip())
+                    task_pairs.append((normalized_task_name, duration))
                 task_index += 1
         
         # Create task records
@@ -385,7 +463,24 @@ class CSVParser:
             tasks.append(task_record)
         
         return tasks
-    
+
+    def normalize_task_name(self, task_name: str) -> str:
+        """
+        Normalize task name from CSV to configured task type.
+
+        Args:
+            task_name: Raw task name from CSV
+
+        Returns:
+            Normalized task name matching configuration
+        """
+        # First try direct mapping
+        if task_name in self.task_name_mapping:
+            return self.task_name_mapping[task_name]
+
+        # If no direct mapping, return lowercase version
+        return task_name.lower()
+
     def validate_tasks(self, tasks: List[TaskRecord]) -> Tuple[List[TaskRecord], List[str]]:
         """
         Validate task records and return valid tasks and error messages.
@@ -425,3 +520,36 @@ class CSVParser:
             valid_tasks.append(task)
         
         return valid_tasks, errors
+
+    def apply_naming_pattern(self, value: str, pattern: str, delimiter: str) -> str:
+        """
+        Apply naming pattern to extract specific part from a delimited string.
+
+        Args:
+            value: The original string to parse
+            pattern: Pattern like 'part[2]' to extract specific part
+            delimiter: Delimiter to split on (e.g., '_')
+
+        Returns:
+            Extracted part or original value if pattern doesn't match
+        """
+        if not value or not pattern:
+            return value
+
+        # Handle part[index] pattern
+        if pattern.startswith('part[') and pattern.endswith(']'):
+            try:
+                index_str = pattern[5:-1]  # Extract index from part[index]
+                index = int(index_str)
+                parts = value.split(delimiter)
+
+                # Handle negative indices and bounds checking
+                if -len(parts) <= index < len(parts):
+                    return parts[index]
+                else:
+                    return value
+            except (ValueError, IndexError):
+                return value
+
+        # If no pattern match, return original value
+        return value

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Montu Manager Task Creator Application
+Ra: Task Creator Application
 
-Main entry point for the Task Creator GUI application.
+Main entry point for the Ra: Task Creator GUI application.
 Provides CSV import functionality with intelligent naming pattern detection.
 """
 

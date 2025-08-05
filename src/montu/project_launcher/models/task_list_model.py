@@ -92,6 +92,11 @@ class TaskListModel(QAbstractTableModel):
                         if not found:
                             match = False
                             break
+                    elif key == 'exclude_cancelled':
+                        # Special filter to exclude cancelled/archived tasks
+                        if value and task.get('status') == 'cancelled':
+                            match = False
+                            break
                     else:
                         task_value = task.get(key)
                         if task_value != value:
