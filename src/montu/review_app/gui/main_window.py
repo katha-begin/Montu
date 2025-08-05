@@ -23,6 +23,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 from .media_player_widget import MediaPlayerWidget
 from .annotation_widget import AnnotationWidget
 from .approval_widget import ApprovalWidget
+from .filter_widget import FilterWidget
 from ..models.review_model import ReviewModel
 
 
@@ -44,6 +45,7 @@ class ReviewAppMainWindow(QMainWindow):
         # State
         self.current_project_id: Optional[str] = None
         self.current_media_item: Optional[Dict[str, Any]] = None
+        self.current_filters: Dict[str, Any] = {}
         
         # Setup UI
         self.setup_ui()
@@ -92,23 +94,27 @@ class ReviewAppMainWindow(QMainWindow):
         # Main content splitter
         main_splitter = QSplitter(Qt.Horizontal)
         
-        # Left side: Media browser
+        # Left side: Media browser with filters
         left_panel = QWidget()
         left_layout = QVBoxLayout(left_panel)
-        
+
+        # Filter widget
+        self.filter_widget = FilterWidget()
+        left_layout.addWidget(self.filter_widget)
+
         # Media list
         media_group = QGroupBox("Media Files")
         media_layout = QVBoxLayout(media_group)
-        
+
         self.media_list = QListWidget()
         self.media_list.setMinimumWidth(300)
         media_layout.addWidget(self.media_list)
-        
+
         # Media info
         self.media_info_label = QLabel("No media selected")
         self.media_info_label.setStyleSheet("color: #666; font-style: italic; padding: 5px;")
         media_layout.addWidget(self.media_info_label)
-        
+
         left_layout.addWidget(media_group)
         
         # Right side: Media player and tools
@@ -218,6 +224,10 @@ class ReviewAppMainWindow(QMainWindow):
         
         # Approval connections
         self.approval_widget.approvalChanged.connect(self.on_approval_changed)
+
+        # Filter connections
+        self.filter_widget.filtersChanged.connect(self.on_filters_changed)
+        self.filter_widget.filtersCleared.connect(self.on_filters_cleared)
     
     def load_available_projects(self):
         """Load available projects from database."""
@@ -259,21 +269,32 @@ class ReviewAppMainWindow(QMainWindow):
         
         try:
             self.show_progress("Loading media files...")
-            
-            media_items = self.review_model.get_media_for_project(self.current_project_id)
-            
+
+            # Get media items with current filters
+            media_items = self.review_model.get_media_for_project(self.current_project_id, self.current_filters)
+
+            # Update filter options with all available media (without filters)
+            if not self.current_filters:  # Only update when no filters are active
+                all_media_items = self.review_model.get_media_for_project(self.current_project_id)
+                self.filter_widget.populate_filter_options(all_media_items)
+
             self.media_list.clear()
-            
+
             for media_item in media_items:
                 item_text = self.format_media_item_text(media_item)
                 list_item = QListWidgetItem(item_text)
                 list_item.setData(Qt.UserRole, media_item)
                 self.media_list.addItem(list_item)
-            
-            count_text = f"{len(media_items)} media files found"
+
+            # Update count text with filter info
+            if self.current_filters:
+                count_text = f"{len(media_items)} media files found (filtered)"
+            else:
+                count_text = f"{len(media_items)} media files found"
+
             self.media_info_label.setText(count_text)
             self.status_bar.showMessage(f"Loaded {len(media_items)} media files")
-            
+
         except Exception as e:
             self.show_error("Error Loading Media", str(e))
         finally:
@@ -445,3 +466,21 @@ class ReviewAppMainWindow(QMainWindow):
             event.accept()
         else:
             event.ignore()
+
+    def on_filters_changed(self, filters: Dict[str, Any]):
+        """Handle filter changes."""
+        self.current_filters = filters
+        print(f"Filters changed: {filters}")
+
+        # Refresh media list with new filters
+        if self.current_project_id:
+            self.refresh_media_list()
+
+    def on_filters_cleared(self):
+        """Handle filter clearing."""
+        self.current_filters = {}
+        print("Filters cleared")
+
+        # Refresh media list without filters
+        if self.current_project_id:
+            self.refresh_media_list()

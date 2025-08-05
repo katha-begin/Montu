@@ -42,8 +42,8 @@ class ReviewModel:
         """Set the current project."""
         self.current_project_id = project_id
     
-    def get_media_for_project(self, project_id: str) -> List[Dict[str, Any]]:
-        """Get media files for a specific project from media_records database."""
+    def get_media_for_project(self, project_id: str, filters: Dict[str, Any] = None) -> List[Dict[str, Any]]:
+        """Get media files for a specific project from media_records database with optional filtering."""
         try:
             # Get all media records from database
             all_media_records = self.db.find('media_records', {})
@@ -64,6 +64,10 @@ class ReviewModel:
                 media_item = self.transform_media_record_to_item(record)
                 if media_item:
                     media_items.append(media_item)
+
+            # Apply filters if provided
+            if filters:
+                media_items = self.apply_media_filters(media_items, filters)
 
             print(f"Found {len(media_items)} media records for project {project_id}")
             return media_items
@@ -352,3 +356,67 @@ class ReviewModel:
         except Exception as e:
             print(f"Error loading approval history: {e}")
             return []
+
+    def apply_media_filters(self, media_items: List[Dict[str, Any]], filters: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Apply filtering criteria to media items."""
+        if not filters:
+            return media_items
+
+        filtered_items = []
+
+        for item in media_items:
+            # Check if item matches all filter criteria
+            if self.item_matches_filters(item, filters):
+                filtered_items.append(item)
+
+        print(f"Filtered {len(media_items)} items to {len(filtered_items)} items using filters: {filters}")
+        return filtered_items
+
+    def item_matches_filters(self, item: Dict[str, Any], filters: Dict[str, Any]) -> bool:
+        """Check if a media item matches the given filter criteria."""
+        task_id = item.get('task_id', '')
+
+        # Parse task_id for episode, sequence, shot
+        episode, sequence, shot = '', '', ''
+        if task_id:
+            parts = task_id.split('_')
+            if len(parts) >= 3:
+                episode = parts[0]  # ep00
+                sequence = parts[1]  # sq010
+                shot = parts[2]     # sh020
+
+        # Check episode filter
+        if 'episode' in filters:
+            if episode != filters['episode']:
+                return False
+
+        # Check sequence filter
+        if 'sequence' in filters:
+            if sequence != filters['sequence']:
+                return False
+
+        # Check shot filter
+        if 'shot' in filters:
+            if shot != filters['shot']:
+                return False
+
+        # Check artist filter
+        if 'artist' in filters:
+            item_artist = item.get('author', '')
+            if item_artist != filters['artist']:
+                return False
+
+        # Check status filter
+        if 'status' in filters:
+            item_status = item.get('approval_status', '').replace('_', ' ').title()
+            filter_status = filters['status']
+            if item_status != filter_status:
+                return False
+
+        # Check file type filter
+        if 'file_type' in filters:
+            item_file_type = item.get('file_extension', '')
+            if item_file_type != filters['file_type']:
+                return False
+
+        return True

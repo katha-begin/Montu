@@ -9,10 +9,12 @@ from .main_window import ReviewAppMainWindow
 from .media_player_widget import MediaPlayerWidget
 from .annotation_widget import AnnotationWidget
 from .approval_widget import ApprovalWidget
+from .filter_widget import FilterWidget
 
 __all__ = [
     'ReviewAppMainWindow',
-    'MediaPlayerWidget', 
+    'MediaPlayerWidget',
     'AnnotationWidget',
-    'ApprovalWidget'
+    'ApprovalWidget',
+    'FilterWidget'
 ]
