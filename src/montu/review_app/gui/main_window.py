@@ -24,6 +24,7 @@ from .media_player_widget import MediaPlayerWidget
 from .annotation_widget import AnnotationWidget
 from .approval_widget import ApprovalWidget
 from .filter_widget import FilterWidget
+from .grouped_media_widget import GroupedMediaWidget
 from ..models.review_model import ReviewModel
 
 
@@ -102,18 +103,13 @@ class ReviewAppMainWindow(QMainWindow):
         self.filter_widget = FilterWidget()
         left_layout.addWidget(self.filter_widget)
 
-        # Media list
+        # Grouped media list
         media_group = QGroupBox("Media Files")
         media_layout = QVBoxLayout(media_group)
 
-        self.media_list = QListWidget()
-        self.media_list.setMinimumWidth(300)
-        media_layout.addWidget(self.media_list)
-
-        # Media info
-        self.media_info_label = QLabel("No media selected")
-        self.media_info_label.setStyleSheet("color: #666; font-style: italic; padding: 5px;")
-        media_layout.addWidget(self.media_info_label)
+        self.grouped_media_widget = GroupedMediaWidget()
+        self.grouped_media_widget.setMinimumWidth(350)
+        media_layout.addWidget(self.grouped_media_widget)
 
         left_layout.addWidget(media_group)
         
@@ -212,8 +208,9 @@ class ReviewAppMainWindow(QMainWindow):
         self.project_selector.currentTextChanged.connect(self.on_project_changed)
         self.refresh_button.clicked.connect(self.refresh_media_list)
         
-        # Media list
-        self.media_list.itemSelectionChanged.connect(self.on_media_selected)
+        # Grouped media widget
+        self.grouped_media_widget.mediaSelected.connect(self.on_media_selected)
+        self.grouped_media_widget.mediaDoubleClicked.connect(self.on_media_double_clicked)
         
         # Media player connections
         self.media_player.mediaLoaded.connect(self.on_media_loaded)
@@ -263,10 +260,9 @@ class ReviewAppMainWindow(QMainWindow):
     def refresh_media_list(self):
         """Refresh the media list for current project."""
         if not self.current_project_id:
-            self.media_list.clear()
-            self.media_info_label.setText("No project selected")
+            self.grouped_media_widget.clear()
             return
-        
+
         try:
             self.show_progress("Loading media files...")
 
@@ -278,22 +274,16 @@ class ReviewAppMainWindow(QMainWindow):
                 all_media_items = self.review_model.get_media_for_project(self.current_project_id)
                 self.filter_widget.populate_filter_options(all_media_items)
 
-            self.media_list.clear()
+            # Set media items in grouped widget
+            self.grouped_media_widget.set_media_items(media_items)
 
-            for media_item in media_items:
-                item_text = self.format_media_item_text(media_item)
-                list_item = QListWidgetItem(item_text)
-                list_item.setData(Qt.UserRole, media_item)
-                self.media_list.addItem(list_item)
-
-            # Update count text with filter info
+            # Update status bar with filter info
             if self.current_filters:
-                count_text = f"{len(media_items)} media files found (filtered)"
+                status_message = f"Loaded {len(media_items)} media files (filtered)"
             else:
-                count_text = f"{len(media_items)} media files found"
+                status_message = f"Loaded {len(media_items)} media files"
 
-            self.media_info_label.setText(count_text)
-            self.status_bar.showMessage(f"Loaded {len(media_items)} media files")
+            self.status_bar.showMessage(status_message)
 
         except Exception as e:
             self.show_error("Error Loading Media", str(e))
@@ -349,36 +339,47 @@ class ReviewAppMainWindow(QMainWindow):
         else:
             return f"{type_emoji} {display_name} [{file_type}] - {author} - {status_emoji} {approval_status}"
     
-    def on_media_selected(self):
-        """Handle media selection change."""
-        current_item = self.media_list.currentItem()
-        if current_item:
-            media_item = current_item.data(Qt.UserRole)
-            self.current_media_item = media_item
-            
-            # Update media player with comprehensive metadata
-            if hasattr(self.media_player, 'load_media_with_metadata'):
-                # Use enhanced media loading with metadata
-                self.media_player.load_media_with_metadata(media_item)
+    def on_media_selected(self, media_item: Dict[str, Any]):
+        """Handle media selection changes from grouped widget."""
+        if not media_item:
+            self.current_media_item = None
+            self.media_player.clear_media()
+            self.annotation_widget.clear_annotations()
+            self.approval_widget.clear_approval_data()
+            return
+
+        self.current_media_item = media_item
+
+        # Update media player with comprehensive metadata
+        if hasattr(self.media_player, 'load_media_with_metadata'):
+            # Use enhanced media loading with metadata
+            self.media_player.load_media_with_metadata(media_item)
+        else:
+            # Fallback to basic media loading
+            media_path = media_item.get('file_path', '')
+            if media_path and os.path.exists(media_path):
+                self.media_player.load_media(media_path)
             else:
-                # Fallback to basic media loading
-                media_path = media_item.get('file_path', '')
-                if media_path and os.path.exists(media_path):
-                    self.media_player.load_media(media_path)
-                else:
-                    self.media_player.clear_media()
-                    self.status_bar.showMessage("Media file not found")
-            
-            # Update annotation widget
-            self.annotation_widget.set_media_item(media_item)
-            
-            # Update approval widget
-            self.approval_widget.set_media_item(media_item)
-            
-            # Update info display
-            task_id = media_item.get('task_id', 'Unknown')
-            version = media_item.get('version', 'v001')
-            self.status_bar.showMessage(f"Selected: {task_id} {version}")
+                self.media_player.clear_media()
+                self.status_bar.showMessage("Media file not found")
+
+        # Update annotation widget
+        self.annotation_widget.set_media_item(media_item)
+
+        # Update approval widget
+        self.approval_widget.set_media_item(media_item)
+
+        # Update info display
+        task_id = media_item.get('task_id', 'Unknown')
+        version = media_item.get('version', 'v001')
+        self.status_bar.showMessage(f"Selected: {task_id} {version}")
+
+    def on_media_double_clicked(self, media_item: Dict[str, Any]):
+        """Handle media double-click events."""
+        # Double-click could trigger OpenRV launch or full-screen playback
+        if hasattr(self.media_player, 'launch_in_openrv'):
+            self.media_player.launch_in_openrv()
+        print(f"Double-clicked media: {media_item.get('file_name', 'Unknown')}")
     
     def on_media_loaded(self, file_path: str):
         """Handle media loaded in player."""
