@@ -1,0 +1,57 @@
+[ ] NAME:Current Task List DESCRIPTION:Root task for conversation __NEW_AGENT__
+-[/] NAME:Montu Manager Ecosystem Development DESCRIPTION:Complete development of Montu Manager ecosystem - four integrated applications (Project Launcher, Task Creator, DCC Integration Suite, Review Application) for VFX/animation studios
+--[x] NAME:Phase 1: Project Foundation & Backend Setup DESCRIPTION:Establish project structure, Docker configuration, and core backend infrastructure
+---[x] NAME:Setup Project Structure DESCRIPTION:Create standard Python project structure with src/, tests/, docs/, requirements.txt, and basic configuration files
+---[x] NAME:Docker Backend Configuration DESCRIPTION:Create Docker setup for MongoDB and optional FastAPI backend, configured to run on random port (avoiding 8000/3000)
+---[x] NAME:MongoDB Schema Design (Documentation Only) DESCRIPTION:Design MongoDB collections (tasks, project_configs, media_records) with proper indexing and validation - documentation phase only, implementation deferred until after GUI validation
+---[x] NAME:Database Connection Architecture DESCRIPTION:Design MongoDB connection wrapper architecture with error handling, connection pooling, and configuration management - implementation deferred until after JSON mock validation
+---[x] NAME:Cross-Platform Path Handling DESCRIPTION:Implement path resolution system for Windows/Linux compatibility with configurable roots
+--[/] NAME:Phase 3: DCC Integration Suite Development DESCRIPTION:Develop DCC Integration Suite with Maya and Nuke plugins after core applications are established
+---[ ] NAME:Maya Integration Foundation DESCRIPTION:Create Maya plugin structure with shelf tools, menu integration, and basic UI embedding capabilities
+---[ ] NAME:Maya File Operations DESCRIPTION:Implement Maya-specific save/load operations with version management and scene file handling
+---[/] NAME:Nuke Integration Foundation DESCRIPTION:Create Nuke plugin structure with menu integration, gizmo support, and UI embedding capabilities
+---[ ] NAME:Nuke File Operations DESCRIPTION:Implement Nuke-specific save/load operations with version management and script file handling
+---[ ] NAME:DCC-Agnostic Interface DESCRIPTION:Create abstract base classes for DCC operations to support future integrations (Houdini, Blender, etc.)
+---[ ] NAME:Basic UI Integration Testing DESCRIPTION:Test Maya and Nuke integrations with simple UI panels and verify functionality in both DCCs
+---[ ] NAME:DCC Integration Suite Development DESCRIPTION:Develop plugin system for Maya, Nuke, and other DCCs with embedded UI panels, file operations, and version management
+--[x] NAME:Phase 2: Core Application Development DESCRIPTION:Build main application features and database integration with GUI mockup and JSON-based validation
+---[x] NAME:Project Launcher GUI Mockup (Priority) DESCRIPTION:Create PySide6 mockup for Project Launcher with project selection dropdown, task/shot navigation, version display, and workflow controls
+---[x] NAME:Database CRUD Operations DESCRIPTION:Implement complete CRUD operations for tasks, project_configs, and media_records collections
+----[x] NAME:Media Services CRUD Operations Implementation DESCRIPTION:Complete implementation of comprehensive media file management system including file storage and retrieval, thumbnail generation, metadata extraction (duration, resolution, codec), media versioning and task linking, binary file storage management, and Review Application integration.
+---[x] NAME:Path Builder Engine DESCRIPTION:Implement template-based path generation using project config templates and dynamic field injection
+---[ ] NAME:Version Management System DESCRIPTION:Implement auto-incrementing version system with publish/lock functionality and metadata handling
+---[ ] NAME:Task Workflow Engine DESCRIPTION:Implement task status tracking, milestone progression, priority management, and time logging
+---[ ] NAME:Media Upload & Management DESCRIPTION:Implement media file upload, preview selection, comment system, and review workflow
+---[ ] NAME:Notes & Review System DESCRIPTION:Implement artist notes, supervisor review notes, and approval workflow with version history
+---[ ] NAME:Database Design Documentation DESCRIPTION:Create comprehensive database schema documentation covering design rationale, relationships, CRUD specs, query patterns, indexing strategy, validation rules, and migration procedures
+---[ ] NAME:JSON Mock Database System DESCRIPTION:Create JSON-based mock database system for testing GUI-to-database connections and validating data flows before MongoDB implementation
+---[x] NAME:Task Creator CSV Processing DESCRIPTION:Implement CSV parsing, data validation, and conversion to JSON format for Task Creator application
+---[ ] NAME:GUI-Database Connection Testing DESCRIPTION:Thoroughly test GUI-to-database connection flows, validate all data operations, and ensure no database operations are missing from design
+---[x] NAME:Project Launcher Development DESCRIPTION:Develop standalone desktop application for project management with PySide6 GUI, project selection, task navigation, and version control
+----[x] NAME:Project Selection Interface DESCRIPTION:Implement project dropdown with database integration and project configuration loading
+----[x] NAME:Task/Shot Navigation System DESCRIPTION:Create hierarchical navigation for episodes, sequences, shots, and tasks with filtering capabilities
+----[x] NAME:Version Display & Management DESCRIPTION:Implement version history display, comparison tools, and version control operations
+----[x] NAME:File Operations Hub DESCRIPTION:Create central interface for opening files in appropriate DCCs and managing working files
+---[x] NAME:Task Creator Development DESCRIPTION:Develop CSV import tool for bulk task creation with data validation, batch processing, and error handling
+----[x] NAME:CSV Import Interface DESCRIPTION:Create user interface for CSV file selection, preview, and import configuration
+----[x] NAME:Data Validation Engine DESCRIPTION:Implement comprehensive validation for task data including required fields, data types, and business rules
+----[x] NAME:Batch Task Creation DESCRIPTION:Implement bulk database operations for creating multiple tasks with progress tracking and error handling
+----[x] NAME:Error Reporting System DESCRIPTION:Create detailed error reporting and resolution guidance for failed imports
+---[x] NAME:Review Application Development DESCRIPTION:Develop media browser application for review workflows with playback, annotation tools, and approval tracking
+----[x] NAME:Media Playback Engine DESCRIPTION:Implement video/image playback with frame-accurate scrubbing and multiple format support
+----[x] NAME:Version Comparison Tools DESCRIPTION:Create side-by-side and overlay comparison tools for reviewing different versions
+----[x] NAME:Annotation System DESCRIPTION:Implement drawing tools, text annotations, and frame-specific notes for review feedback
+----[x] NAME:Approval Workflow DESCRIPTION:Create approval status tracking, supervisor notes, and client version mapping interface
+--[ ] NAME:Phase 4: Advanced Features & Polish DESCRIPTION:Implement advanced features, testing, and deployment preparation
+---[ ] NAME:Client Version Mapping DESCRIPTION:Implement internal-to-client version mapping system with submission history tracking
+---[ ] NAME:Delivery Pipeline DESCRIPTION:Create automated delivery system using submission templates and client folder structures
+---[x] NAME:CLI Interface DESCRIPTION:Implement command-line interface for batch operations and pipeline integration
+---[ ] NAME:PyInstaller Packaging DESCRIPTION:Create PyInstaller build system for Windows and Linux standalone executables
+---[ ] NAME:Comprehensive Testing Suite DESCRIPTION:Implement unit tests, integration tests, and DCC-specific tests with CI/CD pipeline
+---[ ] NAME:Auto-Update System DESCRIPTION:Implement version checking and auto-update mechanism with environment-specific builds
+---[ ] NAME:Documentation & User Guide DESCRIPTION:Create comprehensive documentation, API docs, and user guides for artists and TDs
+-[ ] NAME:MongoDB Migration Timeline and Strategy DESCRIPTION:Implement comprehensive MongoDB migration strategy including database abstraction layer, connection pooling, automated testing pipeline, and data migration scripts from JSON to MongoDB with production deployment timeline.
+-[ ] NAME:User Authentication and Management System DESCRIPTION:Design and implement user authentication and management system architecture with user accounts, role-based permissions, session management, password hashing, and JWT token validation for secure multi-user access.
+-[ ] NAME:Dynamic Schema Support for Project Customizations DESCRIPTION:Implement dynamic schema support allowing project-specific custom fields, flexible document structures, schema validation, and runtime schema modifications without database changes.
+-[ ] NAME:Performance Optimization for Production Environments DESCRIPTION:Optimize database performance for production including MongoDB indexing strategies, connection pooling, query optimization, caching mechanisms, and load balancing for high-throughput VFX workflows.
+-[ ] NAME:Backup and Disaster Recovery Strategies DESCRIPTION:Implement comprehensive backup and disaster recovery system with automated daily backups, point-in-time recovery, replica sets with oplog, incremental backup strategy, and automated recovery testing procedures.
