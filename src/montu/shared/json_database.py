@@ -45,7 +45,8 @@ class JSONDatabase:
             'annotations': self.data_dir / 'annotations.json',
             'directory_operations': self.data_dir / 'directory_operations.json',
             'user_sessions': self.data_dir / 'user_sessions.json',
-            'system_logs': self.data_dir / 'system_logs.json'
+            'system_logs': self.data_dir / 'system_logs.json',
+            'versions': self.data_dir / 'versions.json'
         }
 
         # Path builders cache (project_id -> PathBuilder)
