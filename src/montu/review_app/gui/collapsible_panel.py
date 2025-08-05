@@ -5,12 +5,12 @@ Reusable collapsible panel component with smooth hide/show toggle
 functionality and customizable content for the Review Application.
 """
 
-from typing import Optional
+from typing import Optional, Dict
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QFrame,
-    QSizePolicy, QPropertyAnimation, QGraphicsOpacityEffect
+    QSizePolicy, QGraphicsOpacityEffect
 )
-from PySide6.QtCore import Qt, Signal, QEasingCurve, QPropertyAnimation, QRect, pyqtProperty
+from PySide6.QtCore import Qt, Signal, QEasingCurve, QPropertyAnimation, QRect
 from PySide6.QtGui import QIcon, QPainter, QPixmap
 
 
@@ -77,7 +77,6 @@ class CollapsiblePanel(QWidget):
                 border-radius: 10px;
             }
         """)
-        self.update_toggle_button()
         header_layout.addWidget(self.toggle_button)
         
         # Title label
@@ -145,6 +144,9 @@ class CollapsiblePanel(QWidget):
         self.toggle_button.clicked.connect(self.toggle)
         self.title_label.clicked.connect(self.toggle)
         self.indicator_label.clicked.connect(self.toggle)
+
+        # Initialize button states
+        self.update_toggle_button()
     
     def setup_animations(self):
         """Set up smooth animations for expand/collapse."""
