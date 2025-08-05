@@ -103,10 +103,11 @@ class AnnotationWidget(QWidget):
         frame_layout.addStretch()
         tools_layout.addLayout(frame_layout)
         
-        # Annotation text
+        # Annotation text (optimized for vertical layout)
         self.annotation_text = QTextEdit()
         self.annotation_text.setPlaceholderText("Enter annotation text...")
-        self.annotation_text.setMaximumHeight(80)
+        self.annotation_text.setMaximumHeight(60)  # Reduced height for vertical layout
+        self.annotation_text.setMinimumHeight(40)
         tools_layout.addWidget(self.annotation_text)
         
         # Action buttons

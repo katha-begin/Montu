@@ -113,38 +113,44 @@ class ReviewAppMainWindow(QMainWindow):
 
         left_layout.addWidget(media_group)
         
-        # Right side: Media player and tools
-        right_splitter = QSplitter(Qt.Vertical)
-        
-        # Media player (top right)
+        # Center panel: Media player (full height)
         self.media_player = MediaPlayerWidget()
-        right_splitter.addWidget(self.media_player)
-        
-        # Bottom right: Annotation and approval tools
-        tools_splitter = QSplitter(Qt.Horizontal)
-        
-        # Annotation tools
+
+        # Right panel: Annotation and approval tools (vertical layout)
+        right_panel = QWidget()
+        right_layout = QVBoxLayout(right_panel)
+        right_layout.setContentsMargins(5, 5, 5, 5)
+        right_layout.setSpacing(5)
+
+        # Annotation tools (top of right panel)
+        annotation_group = QGroupBox("Annotations & Review")
+        annotation_layout = QVBoxLayout(annotation_group)
+
         self.annotation_widget = AnnotationWidget()
-        tools_splitter.addWidget(self.annotation_widget)
-        
-        # Approval workflow
+        annotation_layout.addWidget(self.annotation_widget)
+
+        right_layout.addWidget(annotation_group)
+
+        # Approval workflow (bottom of right panel)
+        approval_group = QGroupBox("Approval Workflow")
+        approval_layout = QVBoxLayout(approval_group)
+
         self.approval_widget = ApprovalWidget()
-        tools_splitter.addWidget(self.approval_widget)
-        
-        # Set tools splitter proportions (60% annotation, 40% approval)
-        tools_splitter.setSizes([360, 240])
-        
-        right_splitter.addWidget(tools_splitter)
-        
-        # Set right splitter proportions (70% player, 30% tools)
-        right_splitter.setSizes([700, 300])
-        
-        # Add to main splitter
+        approval_layout.addWidget(self.approval_widget)
+
+        right_layout.addWidget(approval_group)
+
+        # Set right panel proportions (60% annotation, 40% approval)
+        right_layout.setStretchFactor(annotation_group, 60)
+        right_layout.setStretchFactor(approval_group, 40)
+
+        # Add panels to main splitter (3-panel layout)
         main_splitter.addWidget(left_panel)
-        main_splitter.addWidget(right_splitter)
-        
-        # Set main splitter proportions (25% left, 75% right)
-        main_splitter.setSizes([400, 1200])
+        main_splitter.addWidget(self.media_player)
+        main_splitter.addWidget(right_panel)
+
+        # Set main splitter proportions (25% left, 45% center, 30% right)
+        main_splitter.setSizes([350, 630, 420])
         
         main_layout.addWidget(main_splitter)
     
