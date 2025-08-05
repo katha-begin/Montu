@@ -161,7 +161,10 @@ class MediaPlayerWidget(QWidget):
     def setup_ui(self):
         """Set up the user interface."""
         layout = QVBoxLayout(self)
-        
+
+        # Professional controls
+        self.setup_professional_controls(layout)
+
         # Media display area
         display_group = QGroupBox("Media Viewer")
         display_layout = QVBoxLayout(display_group)
@@ -676,3 +679,33 @@ class MediaPlayerWidget(QWidget):
         """Handle color space change."""
         print(f"Color space changed to: {colorspace}")
         # This would be used for display color management in a full implementation
+
+    def show_placeholder(self):
+        """Show placeholder content when no media is loaded."""
+        self.media_label.setText("No media loaded")
+
+        # Clear any media path
+        self.current_media_path = None
+        if hasattr(self, 'current_media_item'):
+            self.current_media_item = None
+
+        # Reset playback state
+        self.is_playing = False
+        self.current_frame = 0
+        self.total_frames = 0
+
+        # Reset timeline
+        self.timeline_slider.setMaximum(0)
+        self.timeline_slider.setValue(0)
+        self.update_frame_display()
+
+        # Reset play button
+        self.play_pause_button.setText("▶")
+        self.playback_timer.stop()
+
+        # Disable OpenRV button
+        if hasattr(self, 'launch_openrv_btn'):
+            self.launch_openrv_btn.setEnabled(False)
+            self.launch_openrv_btn.setToolTip("No media loaded")
+
+        print("Media player placeholder displayed")
