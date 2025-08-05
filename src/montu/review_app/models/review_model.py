@@ -98,27 +98,6 @@ class ReviewModel:
                 total_frames = 1
                 frame_rate = None
             
-            # Look for video/image files
-            media_extensions = ['.mov', '.mp4', '.avi', '.jpg', '.jpeg', '.png', '.exr', '.tiff']
-            media_files = []
-            
-            try:
-                for file in os.listdir(media_dir):
-                    file_ext = os.path.splitext(file)[1].lower()
-                    if file_ext in media_extensions:
-                        media_files.append(os.path.join(media_dir, file))
-            except OSError:
-                pass
-            
-            # If no actual media files found, create a placeholder entry
-            if not media_files:
-                # Use a placeholder path
-                placeholder_path = os.path.join(media_dir, f"{task_id}_v001.mov")
-                media_files = [placeholder_path]
-            
-            # Create media item for the first/main media file
-            main_media_file = media_files[0]
-            
             media_item = {
                 'task_id': task_id,
                 'file_path': main_media_file,
