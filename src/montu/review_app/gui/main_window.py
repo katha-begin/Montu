@@ -25,6 +25,7 @@ from .annotation_widget import AnnotationWidget
 from .approval_widget import ApprovalWidget
 from .filter_widget import FilterWidget
 from .grouped_media_widget import GroupedMediaWidget
+from .collapsible_panel import CollapsiblePanelContainer
 from ..models.review_model import ReviewModel
 
 
@@ -116,41 +117,38 @@ class ReviewAppMainWindow(QMainWindow):
         # Center panel: Media player (full height)
         self.media_player = MediaPlayerWidget()
 
-        # Right panel: Annotation and approval tools (vertical layout)
-        right_panel = QWidget()
-        right_layout = QVBoxLayout(right_panel)
-        right_layout.setContentsMargins(5, 5, 5, 5)
-        right_layout.setSpacing(5)
+        # Right panel: Collapsible annotation and approval tools
+        self.collapsible_container = CollapsiblePanelContainer()
 
-        # Annotation tools (top of right panel)
-        annotation_group = QGroupBox("Annotations & Review")
-        annotation_layout = QVBoxLayout(annotation_group)
-
+        # Create annotation widget
         self.annotation_widget = AnnotationWidget()
-        annotation_layout.addWidget(self.annotation_widget)
+        self.annotation_panel = self.collapsible_container.add_panel(
+            "annotations",
+            "Annotations & Review",
+            self.annotation_widget
+        )
 
-        right_layout.addWidget(annotation_group)
-
-        # Approval workflow (bottom of right panel)
-        approval_group = QGroupBox("Approval Workflow")
-        approval_layout = QVBoxLayout(approval_group)
-
+        # Create approval widget
         self.approval_widget = ApprovalWidget()
-        approval_layout.addWidget(self.approval_widget)
+        self.approval_panel = self.collapsible_container.add_panel(
+            "approval",
+            "Approval Workflow",
+            self.approval_widget
+        )
 
-        right_layout.addWidget(approval_group)
-
-        # Set right panel proportions (60% annotation, 40% approval)
-        right_layout.setStretchFactor(annotation_group, 60)
-        right_layout.setStretchFactor(approval_group, 40)
+        # Store reference to right panel for layout adjustments
+        self.right_panel = self.collapsible_container
 
         # Add panels to main splitter (3-panel layout)
         main_splitter.addWidget(left_panel)
         main_splitter.addWidget(self.media_player)
-        main_splitter.addWidget(right_panel)
+        main_splitter.addWidget(self.right_panel)
 
         # Set main splitter proportions (25% left, 45% center, 30% right)
         main_splitter.setSizes([350, 630, 420])
+
+        # Store main splitter for dynamic resizing
+        self.main_splitter = main_splitter
         
         main_layout.addWidget(main_splitter)
     
@@ -180,6 +178,30 @@ class ReviewAppMainWindow(QMainWindow):
         fullscreen_action.setShortcut("F11")
         fullscreen_action.triggered.connect(self.toggle_fullscreen)
         view_menu.addAction(fullscreen_action)
+
+        view_menu.addSeparator()
+
+        # Panel toggle actions
+        toggle_annotations_action = QAction("Toggle Annotations Panel", self)
+        toggle_annotations_action.setShortcut("Ctrl+1")
+        toggle_annotations_action.triggered.connect(lambda: self.collapsible_container.toggle_panel("annotations"))
+        view_menu.addAction(toggle_annotations_action)
+
+        toggle_approval_action = QAction("Toggle Approval Panel", self)
+        toggle_approval_action.setShortcut("Ctrl+2")
+        toggle_approval_action.triggered.connect(lambda: self.collapsible_container.toggle_panel("approval"))
+        view_menu.addAction(toggle_approval_action)
+
+        view_menu.addSeparator()
+
+        # Panel management actions
+        expand_all_action = QAction("Expand All Panels", self)
+        expand_all_action.triggered.connect(self.collapsible_container.expand_all)
+        view_menu.addAction(expand_all_action)
+
+        collapse_all_action = QAction("Collapse All Panels", self)
+        collapse_all_action.triggered.connect(self.collapsible_container.collapse_all)
+        view_menu.addAction(collapse_all_action)
         
         # Tools menu
         tools_menu = menubar.addMenu("Tools")
@@ -231,6 +253,9 @@ class ReviewAppMainWindow(QMainWindow):
         # Filter connections
         self.filter_widget.filtersChanged.connect(self.on_filters_changed)
         self.filter_widget.filtersCleared.connect(self.on_filters_cleared)
+
+        # Collapsible panel connections
+        self.collapsible_container.panelToggled.connect(self.on_panel_toggled)
     
     def load_available_projects(self):
         """Load available projects from database."""
@@ -491,3 +516,45 @@ class ReviewAppMainWindow(QMainWindow):
         # Refresh media list without filters
         if self.current_project_id:
             self.refresh_media_list()
+
+    def on_panel_toggled(self, panel_name: str, expanded: bool):
+        """Handle panel toggle events and adjust layout."""
+        print(f"Panel '{panel_name}' {'expanded' if expanded else 'collapsed'}")
+
+        # Adjust main splitter sizes based on panel states
+        self.adjust_layout_for_panels()
+
+    def adjust_layout_for_panels(self):
+        """Adjust main splitter layout based on panel visibility."""
+        # Check which panels are expanded
+        annotations_expanded = self.annotation_panel.is_panel_expanded()
+        approval_expanded = self.approval_panel.is_panel_expanded()
+
+        # Calculate right panel width based on expanded panels
+        if annotations_expanded or approval_expanded:
+            # At least one panel is expanded - normal right panel width
+            right_width = 420
+        else:
+            # All panels collapsed - minimal right panel width
+            right_width = 50
+
+        # Adjust splitter sizes
+        current_sizes = self.main_splitter.sizes()
+        total_width = sum(current_sizes)
+
+        # Calculate new proportions
+        left_width = 350  # Fixed left panel width
+        center_width = total_width - left_width - right_width
+
+        # Apply new sizes
+        new_sizes = [left_width, center_width, right_width]
+        self.main_splitter.setSizes(new_sizes)
+
+        print(f"Layout adjusted: Left={left_width}, Center={center_width}, Right={right_width}")
+
+    def toggle_fullscreen(self):
+        """Toggle fullscreen mode."""
+        if self.isFullScreen():
+            self.showNormal()
+        else:
+            self.showFullScreen()

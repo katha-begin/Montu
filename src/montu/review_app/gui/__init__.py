@@ -11,6 +11,7 @@ from .annotation_widget import AnnotationWidget
 from .approval_widget import ApprovalWidget
 from .filter_widget import FilterWidget
 from .grouped_media_widget import GroupedMediaWidget
+from .collapsible_panel import CollapsiblePanel, CollapsiblePanelContainer
 
 __all__ = [
     'ReviewAppMainWindow',
@@ -18,5 +19,7 @@ __all__ = [
     'AnnotationWidget',
     'ApprovalWidget',
     'FilterWidget',
-    'GroupedMediaWidget'
+    'GroupedMediaWidget',
+    'CollapsiblePanel',
+    'CollapsiblePanelContainer'
 ]
