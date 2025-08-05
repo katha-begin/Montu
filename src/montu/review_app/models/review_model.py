@@ -97,25 +97,7 @@ class ReviewModel:
                 file_type = 'image'
                 total_frames = 1
                 frame_rate = None
-            
-            media_item = {
-                'task_id': task_id,
-                'file_path': main_media_file,
-                'file_type': self.get_file_type(main_media_file),
-                'version': 'v001',  # Default version
-                'status': task.get('status', 'pending'),
-                'total_frames': 100,  # Default frame count
-                'frame_rate': 24.0,
-                'created_date': datetime.now().isoformat(),
-                'file_size': self.get_file_size(main_media_file),
-                'task_info': {
-                    'shot': task.get('shot', 'Unknown'),
-                    'task': task.get('task', 'Unknown'),
-                    'artist': task.get('artist', 'Unknown'),
-                    'priority': task.get('priority', 'medium')
-                }
-            }
-            
+
             # Get task information for display
             task_info = self.get_task_info_for_media(task_id)
 
