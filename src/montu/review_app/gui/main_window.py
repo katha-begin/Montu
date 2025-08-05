@@ -228,7 +228,7 @@ class ReviewAppMainWindow(QMainWindow):
             self.project_selector.addItem("Select Project...", "")
             
             for project in projects:
-                project_id = project.get('project_id', 'Unknown')
+                project_id = project.get('_id', 'Unknown')
                 project_name = project.get('name', project_id)
                 self.project_selector.addItem(f"{project_name} ({project_id})", project_id)
             
@@ -284,18 +284,49 @@ class ReviewAppMainWindow(QMainWindow):
         task_id = media_item.get('task_id', 'Unknown')
         version = media_item.get('version', 'v001')
         file_type = media_item.get('file_type', 'unknown')
-        status = media_item.get('status', 'pending')
-        
-        # Extract shot/task info from task_id
-        parts = task_id.split('_')
-        if len(parts) >= 4:
-            shot = parts[2]
-            task = parts[3]
+        approval_status = media_item.get('approval_status', 'pending')
+        author = media_item.get('author', 'Unknown')
+        file_name = media_item.get('file_name', '')
+        file_extension = media_item.get('file_extension', '')
+
+        # Get task info if available
+        task_info = media_item.get('task_info', {})
+        shot = task_info.get('shot', 'Unknown')
+        task = task_info.get('task', 'Unknown')
+
+        # Create display name
+        if shot != 'Unknown' and task != 'Unknown':
             display_name = f"{shot} - {task} ({version})"
         else:
-            display_name = f"{task_id} ({version})"
-        
-        return f"📹 {display_name} [{file_type}] - {status}"
+            # Fallback to parsing task_id
+            parts = task_id.split('_')
+            if len(parts) >= 4:
+                shot = parts[2]
+                task = parts[3]
+                display_name = f"{shot} - {task} ({version})"
+            else:
+                display_name = f"{task_id} ({version})"
+
+        # Status emoji
+        status_emoji = {
+            'pending': '⏳',
+            'under_review': '👁️',
+            'approved': '✅',
+            'rejected': '❌',
+            'archived': '📦'
+        }.get(approval_status, '❓')
+
+        # File type emoji
+        type_emoji = {
+            'video': '🎬',
+            'image': '🖼️'
+        }.get(file_type, '📄')
+
+        # Format: [emoji] Shot-Task (version) [ext] - Author - Status
+        if file_extension:
+            return f"{type_emoji} {display_name} [{file_extension}] - {author} - {status_emoji} {approval_status}"
+        else:
+            return f"{type_emoji} {display_name} [{file_type}] - {author} - {status_emoji} {approval_status}"
     
     def on_media_selected(self):
         """Handle media selection change."""
