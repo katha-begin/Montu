@@ -22,8 +22,8 @@
     "estimated_duration_hours": 1224.0,
     "versions": [],
     "client_submission_history": [],
-    "current_version": "v005",
-    "published_version": "v002",
+    "current_version": "v007",
+    "published_version": "v005",
     "file_extension": ".ma",
     "master_file": true,
     "working_file_path": "",
@@ -35,7 +35,7 @@
     "shot_clean": "",
     "episode_clean": "",
     "_created_at": "2025-08-04T11:48:47.186584",
-    "_updated_at": "2025-08-05T20:36:25.078351"
+    "_updated_at": "2025-08-15T23:39:32.464518"
   },
   {
     "_id": "ep00_sq0010_sh0020_comp",

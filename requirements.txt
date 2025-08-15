@@ -1,0 +1,26 @@
+# Montu Manager - Python Dependencies
+# Core GUI Framework
+PyQt6>=6.5.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# File Operations
+pathlib2>=2.3.0
+
+# JSON/Data Handling
+jsonschema>=4.17.0
+
+# Date/Time Utilities
+python-dateutil>=2.8.0
+
+# Optional: MongoDB support (Phase 2)
+# pymongo>=4.3.0
+
+# Development/Testing
+pytest>=7.0.0
+pytest-qt>=4.2.0
+
+# Documentation
+markdown>=3.4.0
