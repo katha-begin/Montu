@@ -1,0 +1,219 @@
+[
+  {
+    "_id": "ep01_sq010_sh020_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq010",
+    "shot": "sh020",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:48:22.298646",
+    "_updated_at": "2025-08-07T12:48:22.298646"
+  },
+  {
+    "_id": "ep01_sq010_sh030_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq010",
+    "shot": "sh030",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:48:22.307168",
+    "_updated_at": "2025-08-07T12:48:22.307168"
+  },
+  {
+    "_id": "ep01_sq020_sh010_lighting",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq020",
+    "shot": "sh010",
+    "task": "lighting",
+    "_created_at": "2025-08-07T12:48:22.402541",
+    "_updated_at": "2025-08-07T12:48:22.402541"
+  },
+  {
+    "_id": "ep02_sq030_sh040_composite",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep02",
+    "sequence": "sq030",
+    "shot": "sh040",
+    "task": "composite",
+    "_created_at": "2025-08-07T12:48:22.423116",
+    "_updated_at": "2025-08-07T12:48:22.423116"
+  },
+  {
+    "_id": "ep02_sq040_sh050_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep02",
+    "sequence": "sq040",
+    "shot": "sh050",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:48:22.431627",
+    "_updated_at": "2025-08-07T12:48:22.431627"
+  },
+  {
+    "_id": "asset_character_hero_modeling",
+    "project_id": "test_project_001",
+    "type": "asset",
+    "category": "character",
+    "asset_name": "hero",
+    "task": "modeling",
+    "_created_at": "2025-08-07T12:48:22.440309",
+    "_updated_at": "2025-08-07T12:48:22.440309"
+  },
+  {
+    "_id": "ep01_sq010_sh020_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq010",
+    "shot": "sh020",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:48:54.828120",
+    "_updated_at": "2025-08-07T12:48:54.828120"
+  },
+  {
+    "_id": "ep01_sq010_sh030_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq010",
+    "shot": "sh030",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:48:54.837637",
+    "_updated_at": "2025-08-07T12:48:54.837637"
+  },
+  {
+    "_id": "ep01_sq020_sh010_lighting",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq020",
+    "shot": "sh010",
+    "task": "lighting",
+    "_created_at": "2025-08-07T12:48:54.946656",
+    "_updated_at": "2025-08-07T12:48:54.946656"
+  },
+  {
+    "_id": "ep02_sq030_sh040_composite",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep02",
+    "sequence": "sq030",
+    "shot": "sh040",
+    "task": "composite",
+    "_created_at": "2025-08-07T12:48:54.954181",
+    "_updated_at": "2025-08-07T12:48:54.954181"
+  },
+  {
+    "_id": "ep02_sq040_sh050_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep02",
+    "sequence": "sq040",
+    "shot": "sh050",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:48:54.968876",
+    "_updated_at": "2025-08-07T12:48:54.968876"
+  },
+  {
+    "_id": "asset_character_hero_modeling",
+    "project_id": "test_project_001",
+    "type": "asset",
+    "category": "character",
+    "asset_name": "hero",
+    "task": "modeling",
+    "_created_at": "2025-08-07T12:48:54.975387",
+    "_updated_at": "2025-08-07T12:48:54.975387"
+  },
+  {
+    "_id": "ep01_sq010_sh020_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq010",
+    "shot": "sh020",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:49:38.491052",
+    "_updated_at": "2025-08-07T12:49:38.491052"
+  },
+  {
+    "_id": "ep01_sq010_sh030_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq010",
+    "shot": "sh030",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:49:38.500552",
+    "_updated_at": "2025-08-07T12:49:38.500552"
+  },
+  {
+    "_id": "ep01_sq020_sh010_lighting",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq020",
+    "shot": "sh010",
+    "task": "lighting",
+    "_created_at": "2025-08-07T12:49:38.508556",
+    "_updated_at": "2025-08-07T12:49:38.508556"
+  },
+  {
+    "_id": "ep02_sq030_sh040_composite",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep02",
+    "sequence": "sq030",
+    "shot": "sh040",
+    "task": "composite",
+    "_created_at": "2025-08-07T12:49:38.517064",
+    "_updated_at": "2025-08-07T12:49:38.517064"
+  },
+  {
+    "_id": "ep02_sq040_sh050_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep02",
+    "sequence": "sq040",
+    "shot": "sh050",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:49:38.524768",
+    "_updated_at": "2025-08-07T12:49:38.524768"
+  },
+  {
+    "_id": "asset_character_hero_modeling",
+    "project_id": "test_project_001",
+    "type": "asset",
+    "category": "character",
+    "asset_name": "hero",
+    "task": "modeling",
+    "_created_at": "2025-08-07T12:49:38.533282",
+    "_updated_at": "2025-08-07T12:49:38.533282"
+  },
+  {
+    "_id": "ep03_sq005_sh010_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep03",
+    "sequence": "sq005",
+    "shot": "sh010",
+    "task": "animation",
+    "_created_at": "2025-08-07T12:49:38.629186",
+    "_updated_at": "2025-08-07T12:49:38.629186"
+  },
+  {
+    "_id": "ep10_sq100_sh001_lighting",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep10",
+    "sequence": "sq100",
+    "shot": "sh001",
+    "task": "lighting",
+    "_created_at": "2025-08-07T12:49:38.637953",
+    "_updated_at": "2025-08-07T12:49:38.637953"
+  }
+]

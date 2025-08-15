@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "test_project_001",
+    "name": "Test Project",
+    "abbreviation": "TP",
+    "status": "active",
+    "_created_at": "2025-08-07T12:48:22.297643",
+    "_updated_at": "2025-08-07T12:48:22.297643"
+  },
+  {
+    "_id": "test_project_001",
+    "name": "Test Project",
+    "abbreviation": "TP",
+    "status": "active",
+    "_created_at": "2025-08-07T12:48:54.827120",
+    "_updated_at": "2025-08-07T12:48:54.827120"
+  },
+  {
+    "_id": "test_project_001",
+    "name": "Test Project",
+    "abbreviation": "TP",
+    "status": "active",
+    "_created_at": "2025-08-07T12:49:38.428714",
+    "_updated_at": "2025-08-07T12:49:38.428714"
+  },
+  {
+    "_id": "empty_project_001",
+    "name": "Empty Project",
+    "abbreviation": "EP",
+    "status": "active",
+    "_created_at": "2025-08-07T12:49:38.659517",
+    "_updated_at": "2025-08-07T12:49:38.659517"
+  }
+]

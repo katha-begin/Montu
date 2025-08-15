@@ -24,6 +24,9 @@ from ..csv_parser import CSVParser, TaskRecord, NamingPattern
 from .pattern_dialog import PatternConfigDialog
 from .directory_preview_widget import DirectoryPreviewWidget
 from .bulk_edit_dialog import BulkEditDialog
+from .project_creation_dialog import ProjectCreationDialog
+from .project_edit_dialog import ProjectEditDialog
+from .manual_task_creation_dialog import ManualTaskCreationDialog
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
@@ -129,9 +132,10 @@ class TaskCreatorMainWindow(QMainWindow):
         self.auto_save_timer.setInterval(5000)
 
     def load_projects(self):
-        """Load available projects from database."""
+        """Load available projects from database (excluding archived projects)."""
         try:
-            projects = self.db.find('project_configs')
+            # Only load active (non-archived) projects for the dropdown
+            projects = self.db.find('project_configs', {'archived': {'$ne': True}})
             self.project_combo.clear()
             self.project_combo.addItem("Select Project...")
 
@@ -612,6 +616,10 @@ class TaskCreatorMainWindow(QMainWindow):
         self.tab_widget = QTabWidget()
         layout.addWidget(self.tab_widget)
 
+        # Project Management Tab
+        project_management_tab = self.create_project_management_tab()
+        self.tab_widget.addTab(project_management_tab, "Project Management")
+
         # Task Management Tab
         task_management_tab = self.create_task_management_tab()
         self.tab_widget.addTab(task_management_tab, "Task Management")
@@ -632,6 +640,20 @@ class TaskCreatorMainWindow(QMainWindow):
 
         # File menu
         file_menu = menubar.addMenu('&File')
+
+        # Create New Project action
+        create_project_action = QAction('&Create New Project...', self)
+        create_project_action.setShortcut(QKeySequence('Ctrl+N'))
+        create_project_action.triggered.connect(self.show_create_project_dialog)
+        file_menu.addAction(create_project_action)
+
+        file_menu.addSeparator()
+
+        # Create Task action
+        create_task_action = QAction('Create &Task...', self)
+        create_task_action.setShortcut(QKeySequence('Ctrl+T'))
+        create_task_action.triggered.connect(self.show_create_task_dialog)
+        file_menu.addAction(create_task_action)
 
         # Import CSV action
         import_csv_action = QAction('&Import CSV...', self)
@@ -687,6 +709,20 @@ class TaskCreatorMainWindow(QMainWindow):
         """Create main toolbar."""
         toolbar = self.addToolBar('Main')
         toolbar.setMovable(False)
+
+        # Create New Project action
+        create_project_action = QAction('Create New Project', self)
+        create_project_action.setToolTip('Create a new project configuration')
+        create_project_action.triggered.connect(self.show_create_project_dialog)
+        toolbar.addAction(create_project_action)
+
+        # Create Task action
+        create_task_action = QAction('Create Task', self)
+        create_task_action.setToolTip('Create a new task manually')
+        create_task_action.triggered.connect(self.show_create_task_dialog)
+        toolbar.addAction(create_task_action)
+
+        toolbar.addSeparator()
 
         # Save action
         save_action = QAction('Save All', self)
@@ -918,6 +954,748 @@ class TaskCreatorMainWindow(QMainWindow):
         main_splitter.setSizes([840, 360])
 
         return tab_widget
+
+    def create_project_management_tab(self) -> QWidget:
+        """Create the project management tab."""
+        tab_widget = QWidget()
+        layout = QVBoxLayout(tab_widget)
+
+        # Header section
+        header_layout = QHBoxLayout()
+
+        # Title
+        title_label = QLabel("Project Management")
+        title_font = QFont()
+        title_font.setPointSize(12)
+        title_font.setBold(True)
+        title_label.setFont(title_font)
+        header_layout.addWidget(title_label)
+
+        header_layout.addStretch()
+
+        # Create New Project button
+        self.create_project_btn = QPushButton("Create New Project")
+        self.create_project_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #45a049;
+            }
+        """)
+        self.create_project_btn.clicked.connect(self.show_create_project_dialog)
+        header_layout.addWidget(self.create_project_btn)
+
+        layout.addLayout(header_layout)
+
+        # Project list section
+        projects_group = QGroupBox("Existing Projects")
+        projects_layout = QVBoxLayout(projects_group)
+
+        # Projects table
+        self.projects_table = QTableWidget()
+        self.setup_projects_table()
+        projects_layout.addWidget(self.projects_table)
+
+        # Project operations
+        operations_layout = QHBoxLayout()
+
+        self.create_task_btn = QPushButton("Create Task")
+        self.create_task_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #2196F3;
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #1976D2;
+            }
+        """)
+        self.create_task_btn.clicked.connect(self.show_create_task_dialog)
+        operations_layout.addWidget(self.create_task_btn)
+
+        operations_layout.addSpacing(10)
+
+        self.edit_project_btn = QPushButton("Edit Selected Project")
+        self.edit_project_btn.setEnabled(False)
+        self.edit_project_btn.clicked.connect(self.edit_selected_project)
+        operations_layout.addWidget(self.edit_project_btn)
+
+        self.archive_project_btn = QPushButton("Archive Selected Project")
+        self.archive_project_btn.setEnabled(False)
+        self.archive_project_btn.clicked.connect(self.archive_selected_project)
+        operations_layout.addWidget(self.archive_project_btn)
+
+        self.refresh_projects_btn = QPushButton("Refresh Projects")
+        self.refresh_projects_btn.clicked.connect(self.refresh_projects_list)
+        operations_layout.addWidget(self.refresh_projects_btn)
+
+        operations_layout.addStretch()
+
+        # Show archived projects toggle
+        self.show_archived_checkbox = QCheckBox("Show Archived Projects")
+        self.show_archived_checkbox.toggled.connect(self.refresh_projects_list)
+        operations_layout.addWidget(self.show_archived_checkbox)
+
+        self.project_count_label = QLabel("0 projects")
+        operations_layout.addWidget(self.project_count_label)
+
+        projects_layout.addLayout(operations_layout)
+        layout.addWidget(projects_group)
+
+        # Load projects
+        self.refresh_projects_list()
+
+        return tab_widget
+
+    def setup_projects_table(self):
+        """Set up the projects table."""
+        self.projects_table.setColumnCount(7)
+        self.projects_table.setHorizontalHeaderLabels([
+            "Project ID", "Project Name", "Description", "Task Types",
+            "Timeline", "Status", "Created"
+        ])
+
+        # Configure table
+        header = self.projects_table.horizontalHeader()
+        header.setStretchLastSection(True)
+        header.resizeSection(0, 100)  # Project ID
+        header.resizeSection(1, 200)  # Project Name
+        header.resizeSection(2, 200)  # Description
+        header.resizeSection(3, 120)  # Task Types
+        header.resizeSection(4, 150)  # Timeline
+        header.resizeSection(5, 80)   # Status
+
+        self.projects_table.setAlternatingRowColors(True)
+        self.projects_table.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.projects_table.setSortingEnabled(True)
+
+        # Enable selection tracking
+        self.projects_table.selectionModel().selectionChanged.connect(self.on_project_selection_changed)
+
+        # Enable double-click to edit
+        self.projects_table.doubleClicked.connect(self.edit_selected_project)
+
+        # Enable context menu
+        self.projects_table.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.projects_table.customContextMenuRequested.connect(self.show_project_context_menu)
+
+    def refresh_projects_list(self):
+        """Refresh the projects list from database."""
+        try:
+            # Determine if we should show archived projects
+            show_archived = self.show_archived_checkbox.isChecked()
+
+            if show_archived:
+                projects = self.db.find('project_configs')
+            else:
+                # Filter out archived projects
+                projects = self.db.find('project_configs', {'archived': {'$ne': True}})
+
+            self.projects_table.setRowCount(len(projects))
+
+            active_count = 0
+            archived_count = 0
+
+            for row, project in enumerate(projects):
+                is_archived = project.get('archived', False)
+
+                if is_archived:
+                    archived_count += 1
+                else:
+                    active_count += 1
+
+                # Project ID
+                item = QTableWidgetItem(project.get('_id', ''))
+                if is_archived:
+                    item.setForeground(QBrush(QColor("#888888")))
+                self.projects_table.setItem(row, 0, item)
+
+                # Project Name
+                item = QTableWidgetItem(project.get('name', ''))
+                if is_archived:
+                    item.setForeground(QBrush(QColor("#888888")))
+                self.projects_table.setItem(row, 1, item)
+
+                # Description
+                description = project.get('description', '')
+                if len(description) > 40:
+                    description = description[:37] + "..."
+                item = QTableWidgetItem(description)
+                if is_archived:
+                    item.setForeground(QBrush(QColor("#888888")))
+                self.projects_table.setItem(row, 2, item)
+
+                # Task Types
+                task_types = project.get('task_types', [])
+                task_types_str = ", ".join(task_types[:2])  # Show first 2
+                if len(task_types) > 2:
+                    task_types_str += f" (+{len(task_types) - 2})"
+                item = QTableWidgetItem(task_types_str)
+                if is_archived:
+                    item.setForeground(QBrush(QColor("#888888")))
+                self.projects_table.setItem(row, 3, item)
+
+                # Timeline
+                timeline = project.get('project_timeline', {})
+                if timeline:
+                    start_date = timeline.get('start_date', '')
+                    end_date = timeline.get('end_date', '')
+                    timeline_str = f"{start_date} to {end_date}"
+                else:
+                    timeline_str = "Not specified"
+                item = QTableWidgetItem(timeline_str)
+                if is_archived:
+                    item.setForeground(QBrush(QColor("#888888")))
+                self.projects_table.setItem(row, 4, item)
+
+                # Status
+                if is_archived:
+                    archived_date = project.get('archived_at', '')
+                    if archived_date:
+                        try:
+                            from datetime import datetime
+                            dt = datetime.fromisoformat(archived_date.replace('Z', '+00:00'))
+                            status_str = f"Archived {dt.strftime('%Y-%m-%d')}"
+                        except:
+                            status_str = "Archived"
+                    else:
+                        status_str = "Archived"
+                    item = QTableWidgetItem(status_str)
+                    item.setForeground(QBrush(QColor("#888888")))
+                else:
+                    item = QTableWidgetItem("Active")
+                    item.setForeground(QBrush(QColor("#008000")))
+                self.projects_table.setItem(row, 5, item)
+
+                # Created
+                created = project.get('_created_at', '')
+                if created:
+                    # Format timestamp
+                    try:
+                        from datetime import datetime
+                        dt = datetime.fromisoformat(created.replace('Z', '+00:00'))
+                        created_str = dt.strftime("%Y-%m-%d %H:%M")
+                    except:
+                        created_str = created[:10]  # Just the date part
+                else:
+                    created_str = "Unknown"
+                item = QTableWidgetItem(created_str)
+                if is_archived:
+                    item.setForeground(QBrush(QColor("#888888")))
+                self.projects_table.setItem(row, 6, item)
+
+            # Update count with archive information
+            if show_archived and archived_count > 0:
+                self.project_count_label.setText(f"{active_count} active project{'s' if active_count != 1 else ''} ({archived_count} archived)")
+            else:
+                self.project_count_label.setText(f"{active_count} project{'s' if active_count != 1 else ''}")
+
+        except Exception as e:
+            QMessageBox.warning(self, "Error", f"Failed to load projects: {e}")
+            self.project_count_label.setText("0 projects")
+
+    def on_project_selection_changed(self):
+        """Handle project selection changes."""
+        selected_rows = self.projects_table.selectionModel().selectedRows()
+        has_selection = len(selected_rows) > 0
+
+        # Enable/disable buttons based on selection
+        self.edit_project_btn.setEnabled(has_selection)
+        self.archive_project_btn.setEnabled(has_selection)
+
+        if has_selection:
+            # Update button text based on project status
+            row = selected_rows[0].row()
+            status_item = self.projects_table.item(row, 5)  # Status column
+            is_archived = status_item and "Archived" in status_item.text()
+
+            if is_archived:
+                self.archive_project_btn.setText("Unarchive Selected Project")
+            else:
+                self.archive_project_btn.setText("Archive Selected Project")
+
+    def get_selected_project_id(self) -> str:
+        """Get the project ID of the currently selected project."""
+        selected_rows = self.projects_table.selectionModel().selectedRows()
+        if selected_rows:
+            row = selected_rows[0].row()
+            project_id_item = self.projects_table.item(row, 0)
+            return project_id_item.text() if project_id_item else ""
+        return ""
+
+    def edit_selected_project(self):
+        """Edit the selected project."""
+        project_id = self.get_selected_project_id()
+        if not project_id:
+            QMessageBox.warning(self, "No Selection", "Please select a project to edit.")
+            return
+
+        self.show_edit_project_dialog(project_id)
+
+    def show_edit_project_dialog(self, project_id: str):
+        """Show the project edit dialog for the specified project."""
+        try:
+            # Get project configuration from database
+            project_config = self.db.find_one('project_configs', {'_id': project_id})
+            if not project_config:
+                QMessageBox.warning(self, "Project Not Found", f"Project '{project_id}' not found in database.")
+                return
+
+            # Get existing project IDs for validation
+            existing_projects = []
+            try:
+                projects = self.db.find('project_configs')
+                existing_projects = [p.get('_id', '') for p in projects]
+            except Exception as e:
+                print(f"Warning: Could not load existing projects for validation: {e}")
+
+            # Create and show edit dialog
+            dialog = ProjectEditDialog(self, existing_projects, project_config)
+            dialog.project_updated.connect(self.on_project_updated)
+
+            # Show dialog
+            if dialog.exec() == QDialog.Accepted:
+                # Dialog was accepted, project update handled by signal
+                pass
+
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to open project edit dialog:\n{str(e)}")
+
+    def on_project_updated(self, updated_config: dict):
+        """Handle successful project update."""
+        try:
+            # Update project in database
+            project_id = updated_config['_id']
+            success = self.db.update_one('project_configs', {'_id': project_id}, {'$set': updated_config})
+
+            if success:
+                # Show success message
+                QMessageBox.information(
+                    self,
+                    "Project Updated Successfully",
+                    f"Project '{updated_config['name']}' (ID: {project_id}) has been updated successfully."
+                )
+
+                # Refresh projects list
+                self.refresh_projects_list()
+
+                # Refresh project dropdown in header
+                self.load_projects()
+
+            else:
+                QMessageBox.critical(
+                    self,
+                    "Project Update Failed",
+                    f"Failed to update project '{updated_config['name']}' in database.\n\n"
+                    f"Please check database connectivity and try again."
+                )
+
+        except Exception as e:
+            QMessageBox.critical(
+                self,
+                "Project Update Error",
+                f"An error occurred while updating the project:\n{str(e)}\n\n"
+                f"Please check the error details and try again."
+            )
+
+    def archive_selected_project(self):
+        """Archive or unarchive the selected project."""
+        project_id = self.get_selected_project_id()
+        if not project_id:
+            QMessageBox.warning(self, "No Selection", "Please select a project to archive/unarchive.")
+            return
+
+        # Get project configuration to check current status
+        try:
+            project_config = self.db.find_one('project_configs', {'_id': project_id})
+            if not project_config:
+                QMessageBox.warning(self, "Project Not Found", f"Project '{project_id}' not found in database.")
+                return
+
+            is_archived = project_config.get('archived', False)
+            project_name = project_config.get('name', project_id)
+
+            if is_archived:
+                # Unarchive project
+                reply = QMessageBox.question(
+                    self,
+                    "Unarchive Project",
+                    f"Are you sure you want to unarchive project '{project_name}'?\n\n"
+                    f"This will make the project and all related tasks visible again in all Montu Manager applications.",
+                    QMessageBox.Yes | QMessageBox.No,
+                    QMessageBox.No
+                )
+
+                if reply == QMessageBox.Yes:
+                    self.unarchive_project(project_id, project_name)
+            else:
+                # Archive project
+                reply = QMessageBox.question(
+                    self,
+                    "Archive Project",
+                    f"Are you sure you want to archive project '{project_name}'?\n\n"
+                    f"This will hide the project and all related tasks from all Montu Manager applications.\n"
+                    f"You can unarchive it later if needed.",
+                    QMessageBox.Yes | QMessageBox.No,
+                    QMessageBox.No
+                )
+
+                if reply == QMessageBox.Yes:
+                    self.archive_project(project_id, project_name)
+
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to process archive operation:\n{str(e)}")
+
+    def archive_project(self, project_id: str, project_name: str):
+        """Archive a project."""
+        try:
+            from datetime import datetime
+
+            # Update project with archive status
+            archive_data = {
+                'archived': True,
+                'archived_at': datetime.now().isoformat(),
+                'archived_by': 'Ra Task Creator',  # Could be enhanced with user authentication
+                '_updated_at': datetime.now().isoformat()
+            }
+
+            success = self.db.update_one('project_configs', {'_id': project_id}, {'$set': archive_data})
+
+            if success:
+                QMessageBox.information(
+                    self,
+                    "Project Archived",
+                    f"Project '{project_name}' has been archived successfully.\n\n"
+                    f"It will no longer appear in project lists unless 'Show Archived Projects' is enabled."
+                )
+
+                # Refresh projects list
+                self.refresh_projects_list()
+
+                # Refresh project dropdown (will exclude archived project)
+                self.load_projects()
+
+                # If the archived project was currently selected, clear selection
+                current_project = self.project_combo.currentData()
+                if current_project == project_id:
+                    self.project_combo.setCurrentIndex(0)  # Select "Select Project..."
+
+            else:
+                QMessageBox.critical(self, "Archive Failed", f"Failed to archive project '{project_name}'.")
+
+        except Exception as e:
+            QMessageBox.critical(self, "Archive Error", f"Error archiving project:\n{str(e)}")
+
+    def unarchive_project(self, project_id: str, project_name: str):
+        """Unarchive a project."""
+        try:
+            from datetime import datetime
+
+            # Remove archive status
+            unarchive_data = {
+                'archived': False,
+                '_updated_at': datetime.now().isoformat()
+            }
+
+            # Remove archive-specific fields
+            unset_data = {
+                'archived_at': "",
+                'archived_by': ""
+            }
+
+            success = self.db.update_one(
+                'project_configs',
+                {'_id': project_id},
+                {'$set': unarchive_data, '$unset': unset_data}
+            )
+
+            if success:
+                QMessageBox.information(
+                    self,
+                    "Project Unarchived",
+                    f"Project '{project_name}' has been unarchived successfully.\n\n"
+                    f"It is now available in all Montu Manager applications."
+                )
+
+                # Refresh projects list
+                self.refresh_projects_list()
+
+                # Refresh project dropdown (will include unarchived project)
+                self.load_projects()
+
+            else:
+                QMessageBox.critical(self, "Unarchive Failed", f"Failed to unarchive project '{project_name}'.")
+
+        except Exception as e:
+            QMessageBox.critical(self, "Unarchive Error", f"Error unarchiving project:\n{str(e)}")
+
+    def show_project_context_menu(self, position):
+        """Show context menu for project table."""
+        item = self.projects_table.itemAt(position)
+        if not item:
+            return
+
+        # Get project info
+        row = item.row()
+        project_id_item = self.projects_table.item(row, 0)
+        status_item = self.projects_table.item(row, 5)
+
+        if not project_id_item:
+            return
+
+        project_id = project_id_item.text()
+        is_archived = status_item and "Archived" in status_item.text()
+
+        # Create context menu
+        menu = QMenu(self)
+
+        # Edit Project action
+        edit_action = menu.addAction("Edit Project")
+        edit_action.triggered.connect(lambda: self.show_edit_project_dialog(project_id))
+
+        # Archive/Unarchive action
+        if is_archived:
+            archive_action = menu.addAction("Unarchive Project")
+        else:
+            archive_action = menu.addAction("Archive Project")
+        archive_action.triggered.connect(self.archive_selected_project)
+
+        menu.addSeparator()
+
+        # View Details action
+        view_action = menu.addAction("View Details")
+        view_action.triggered.connect(lambda: self.show_project_details(project_id))
+
+        # Show menu
+        menu.exec(self.projects_table.mapToGlobal(position))
+
+    def show_project_details(self, project_id: str):
+        """Show detailed project information."""
+        try:
+            project_config = self.db.find_one('project_configs', {'_id': project_id})
+            if not project_config:
+                QMessageBox.warning(self, "Project Not Found", f"Project '{project_id}' not found in database.")
+                return
+
+            # Build details text
+            details = f"Project Details: {project_config.get('name', 'Unknown')}\n"
+            details += "=" * 60 + "\n\n"
+
+            details += f"Project ID: {project_config.get('_id', 'Unknown')}\n"
+            details += f"Name: {project_config.get('name', 'Unknown')}\n"
+            details += f"Description: {project_config.get('description', 'No description')}\n\n"
+
+            # Timeline
+            timeline = project_config.get('project_timeline', {})
+            if timeline:
+                details += f"Timeline: {timeline.get('start_date', 'Unknown')} to {timeline.get('end_date', 'Unknown')}\n"
+
+            # Budget
+            budget = project_config.get('project_budget', {})
+            if budget:
+                details += f"Budget: {budget.get('total_mandays', 0)} mandays\n"
+
+            # Task Types
+            task_types = project_config.get('task_types', [])
+            details += f"Task Types: {', '.join(task_types)}\n\n"
+
+            # Media Configuration
+            media_config = project_config.get('media_configuration', {})
+            if media_config:
+                final_res = media_config.get('final_delivery_resolution', {})
+                daily_res = media_config.get('daily_review_resolution', {})
+                details += f"Final Resolution: {final_res.get('width', 'Unknown')}x{final_res.get('height', 'Unknown')}\n"
+                details += f"Daily Resolution: {daily_res.get('width', 'Unknown')}x{daily_res.get('height', 'Unknown')}\n"
+                details += f"Frame Rate: {media_config.get('default_frame_rate', 'Unknown')} fps\n\n"
+
+            # Color Pipeline
+            color_pipeline = project_config.get('color_pipeline', {})
+            if color_pipeline:
+                details += f"Working Colorspace: {color_pipeline.get('working_colorspace', 'Unknown')}\n"
+                details += f"Display Colorspace: {color_pipeline.get('display_colorspace', 'Unknown')}\n"
+                ocio_path = color_pipeline.get('ocio_config_path', '')
+                if ocio_path:
+                    details += f"OCIO Config: {ocio_path}\n"
+                details += "\n"
+
+            # Archive Status
+            if project_config.get('archived', False):
+                details += f"Status: Archived on {project_config.get('archived_at', 'Unknown')}\n"
+            else:
+                details += "Status: Active\n"
+
+            # Timestamps
+            details += f"Created: {project_config.get('_created_at', 'Unknown')}\n"
+            details += f"Updated: {project_config.get('_updated_at', 'Unknown')}\n"
+
+            # Show details dialog
+            QMessageBox.information(self, "Project Details", details)
+
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to load project details:\n{str(e)}")
+
+    def show_create_task_dialog(self):
+        """Show the manual task creation dialog."""
+        try:
+            # Get existing project IDs for project selection
+            existing_projects = []
+            try:
+                projects = self.db.get_active_projects()
+                existing_projects = [p.get('_id', '') for p in projects]
+            except Exception as e:
+                print(f"Warning: Could not load existing projects: {e}")
+
+            if not existing_projects:
+                QMessageBox.information(
+                    self,
+                    "No Projects Available",
+                    "No active projects found. Please create a project first before creating tasks."
+                )
+                return
+
+            # Create and show dialog
+            dialog = ManualTaskCreationDialog(self, self.db, existing_projects)
+            dialog.task_created.connect(self.on_task_created)
+            dialog.tasks_created.connect(self.on_tasks_created)
+
+            # Show dialog
+            if dialog.exec() == QDialog.Accepted:
+                # Dialog was accepted, task creation handled by signals
+                pass
+
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to open task creation dialog:\n{str(e)}")
+
+    def on_task_created(self, task_data: dict):
+        """Handle successful single task creation."""
+        try:
+            # Show success message
+            QMessageBox.information(
+                self,
+                "Task Created Successfully",
+                f"Task '{task_data['_id']}' has been created successfully.\n\n"
+                f"Type: {task_data.get('type', 'Unknown')}\n"
+                f"Artist: {task_data.get('artist', 'Unassigned')}\n"
+                f"Status: {task_data.get('status', 'Unknown')}"
+            )
+
+            # Refresh task list if we're viewing the same project
+            current_project = self.project_combo.currentData()
+            if current_project == task_data.get('project'):
+                self.refresh_tasks()
+
+            # Switch to Task Management tab to show the new task
+            self.tab_widget.setCurrentIndex(1)  # Task Management tab
+
+        except Exception as e:
+            QMessageBox.critical(
+                self,
+                "Task Display Error",
+                f"Task was created but an error occurred while updating the display:\n{str(e)}"
+            )
+
+    def on_tasks_created(self, tasks_data: list):
+        """Handle successful batch task creation."""
+        try:
+            task_count = len(tasks_data)
+            task_types = list(set(task.get('task', 'Unknown') for task in tasks_data))
+
+            # Show success message
+            QMessageBox.information(
+                self,
+                "Tasks Created Successfully",
+                f"{task_count} tasks have been created successfully.\n\n"
+                f"Task types: {', '.join(task_types)}\n"
+                f"Project: {tasks_data[0].get('project', 'Unknown') if tasks_data else 'Unknown'}"
+            )
+
+            # Refresh task list if we're viewing the same project
+            if tasks_data:
+                current_project = self.project_combo.currentData()
+                if current_project == tasks_data[0].get('project'):
+                    self.refresh_tasks()
+
+                # Switch to Task Management tab to show the new tasks
+                self.tab_widget.setCurrentIndex(1)  # Task Management tab
+
+        except Exception as e:
+            QMessageBox.critical(
+                self,
+                "Tasks Display Error",
+                f"Tasks were created but an error occurred while updating the display:\n{str(e)}"
+            )
+
+    def show_create_project_dialog(self):
+        """Show the project creation dialog."""
+        try:
+            # Get existing project IDs for uniqueness validation
+            existing_projects = []
+            try:
+                projects = self.db.find('project_configs')
+                existing_projects = [p.get('_id', '') for p in projects]
+            except Exception as e:
+                print(f"Warning: Could not load existing projects for validation: {e}")
+
+            # Create and show dialog
+            dialog = ProjectCreationDialog(self, existing_projects)
+            dialog.project_created.connect(self.on_project_created)
+
+            # Show dialog
+            if dialog.exec() == QDialog.Accepted:
+                # Dialog was accepted, project creation handled by signal
+                pass
+
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to open project creation dialog:\n{str(e)}")
+
+    def on_project_created(self, project_config: dict):
+        """Handle successful project creation."""
+        try:
+            # Insert project into database
+            success = self.db.insert_one('project_configs', project_config)
+
+            if success:
+                # Show success message
+                QMessageBox.information(
+                    self,
+                    "Project Created Successfully",
+                    f"Project '{project_config['name']}' (ID: {project_config['_id']}) has been created successfully.\n\n"
+                    f"The project is now available in the project selection dropdown."
+                )
+
+                # Refresh projects list
+                self.refresh_projects_list()
+
+                # Refresh project dropdown in header
+                self.load_projects()
+
+                # Switch to project management tab to show the new project
+                self.tab_widget.setCurrentIndex(0)  # Project Management tab is first
+
+            else:
+                QMessageBox.critical(
+                    self,
+                    "Project Creation Failed",
+                    f"Failed to save project '{project_config['name']}' to database.\n\n"
+                    f"Please check database connectivity and try again."
+                )
+
+        except Exception as e:
+            QMessageBox.critical(
+                self,
+                "Project Creation Error",
+                f"An error occurred while creating the project:\n{str(e)}\n\n"
+                f"Please check the error details and try again."
+            )
 
     def setup_task_management_table(self):
         """Set up the enhanced task management table with editing capabilities."""

@@ -554,6 +554,15 @@ class JSONDatabase:
             stats['total_documents'] += count
         
         return stats
+
+    def get_active_projects(self) -> List[Dict[str, Any]]:
+        """
+        Get all active (non-archived) projects.
+
+        Returns:
+            List of active project configurations
+        """
+        return self.find('project_configs', {'archived': {'$ne': True}})
     
     def export_collection(self, collection: str, file_path: Union[str, Path]):
         """Export a collection to a JSON file."""

@@ -130,5 +130,186 @@
     },
     "_created_at": "2025-08-03T16:45:00.000000",
     "_updated_at": "2025-08-03T16:45:00.000000"
+  },
+  {
+    "_created_at": "2025-08-06T09:25:38.807298",
+    "_id": "RGD",
+    "_updated_at": "2025-08-06T23:32:03.180796",
+    "client_settings": {
+      "approval_required": true,
+      "default_client": "RGD_Client",
+      "delivery_formats": [
+        "mov",
+        "mp4"
+      ],
+      "version_reset": true
+    },
+    "color_pipeline": {
+      "display_colorspace": "sRGB",
+      "ocio_config_path": "",
+      "working_colorspace": "ACEScg"
+    },
+    "description": "animation",
+    "drive_mapping": {
+      "backup_files": "E:",
+      "cache_files": "E:",
+      "media_files": "E:",
+      "render_outputs": "W:",
+      "working_files": "V:"
+    },
+    "filename_patterns": {
+      "blender_scene": "{episode}_{sequence_clean}_{shot_clean}_{task}_master_v{version}.blend",
+      "houdini_scene": "{episode}_{sequence_clean}_{shot_clean}_{task}_master_v{version}.hip",
+      "maya_scene": "{episode}_{sequence_clean}_{shot_clean}_{task}_master_v{version}.ma",
+      "nuke_script": "{episode}_{sequence_clean}_{shot_clean}_{task}_master_v{version}.nk",
+      "playblast": "{episode}_{sequence_clean}_{shot_clean}_{task}_v{version}_playblast.mov",
+      "render_sequence": "{episode}_{sequence_clean}_{shot_clean}_{task}_v{version}.{frame}.{ext}",
+      "thumbnail": "{episode}_{sequence_clean}_{shot_clean}_{task}_v{version}_thumb.jpg"
+    },
+    "frame_settings": {
+      "default_fps": 24,
+      "default_start": 1001,
+      "padding": 4
+    },
+    "milestones": [
+      "not_started",
+      "single_frame",
+      "low_quality",
+      "final_render",
+      "final_comp",
+      "approved"
+    ],
+    "name": "relic the guardian of dream",
+    "name_cleaning_rules": {
+      "episode_pattern": "^(Ep[0-9]+)$",
+      "episode_replacement": "\\1",
+      "sequence_pattern": "^RGD_Ep[0-9]+_(.+)$",
+      "sequence_replacement": "\\1",
+      "shot_pattern": "^RGD_Ep[0-9]+_(.+)$",
+      "shot_replacement": "\\1"
+    },
+    "path_segments": {
+      "cache_dir": "cache",
+      "middle_path": "all/scene",
+      "publish_dir": "publish",
+      "version_dir": "version",
+      "work_dir": "work"
+    },
+    "platform_settings": {
+      "linux": {
+        "media_root": "/mnt/media/RGD",
+        "render_root": "/mnt/renders/RGD",
+        "working_root": "/mnt/projects/RGD"
+      },
+      "windows": {
+        "media_root": "E:/RGD",
+        "render_root": "W:/RGD",
+        "working_root": "V:/RGD"
+      }
+    },
+    "priority_levels": [
+      "low",
+      "medium",
+      "high",
+      "urgent"
+    ],
+    "project_budget": {
+      "allocated_mandays": 0,
+      "remaining_mandays": 100.0,
+      "total_mandays": 100.0
+    },
+    "project_timeline": {
+      "end_date": "2026-02-06",
+      "start_date": "2025-08-06"
+    },
+    "task_settings": {
+      "default_file_extensions": {
+        "animation": ".ma",
+        "comp": ".nk",
+        "fx": ".hip",
+        "layout": ".ma",
+        "lighting": ".ma",
+        "lookdev": ".ma",
+        "modeling": ".ma",
+        "rigging": ".ma"
+      },
+      "render_formats": {
+        "animation": [
+          "mov",
+          "jpg"
+        ],
+        "comp": [
+          "exr",
+          "mov",
+          "jpg"
+        ],
+        "fx": [
+          "exr",
+          "mov"
+        ],
+        "layout": [
+          "mov",
+          "jpg"
+        ],
+        "lighting": [
+          "exr",
+          "jpg"
+        ],
+        "lookdev": [
+          "exr",
+          "jpg"
+        ],
+        "modeling": [
+          "jpg",
+          "png"
+        ],
+        "rigging": [
+          "jpg",
+          "png"
+        ]
+      }
+    },
+    "task_types": [
+      "modeling",
+      "rigging",
+      "animation",
+      "layout",
+      "lighting",
+      "comp",
+      "fx",
+      "lookdev"
+    ],
+    "templates": {
+      "cache_file": "{drive_cache}/{project}/{middle_path}/{episode}/{sequence_clean}/{shot_clean}/{task}/cache/",
+      "media_file": "{drive_media}/{project}/{middle_path}/{episode}/{sequence_clean}/{shot_clean}/{task}/{version_dir}/v{version}/media/",
+      "render_output": "{drive_render}/{project}/{middle_path}/{episode}/{sequence_clean}/{shot_clean}/{task}/{version_dir}/v{version}/",
+      "submission": "{drive_render}/{project}/deliveries/{client}/{episode}/{sequence_clean}/{shot_clean}/{task}/v{client_version}/",
+      "working_file": "{drive_working}/{project}/{middle_path}/{episode}/{sequence_clean}/{shot_clean}/{task}/{version_dir}/{filename}"
+    },
+    "version_settings": {
+      "format": "v{version:03d}",
+      "increment": 1,
+      "padding": 3,
+      "start_version": 1
+    },
+    "media_configuration": {
+      "daily_review_formats": [
+        "mov"
+      ],
+      "daily_review_resolution": {
+        "height": 2160,
+        "name": "4K UHD",
+        "width": 3840
+      },
+      "default_frame_rate": 24.0,
+      "final_delivery_formats": [
+        "mp4"
+      ],
+      "final_delivery_resolution": {
+        "height": 1080,
+        "name": "HD 1080p",
+        "width": 1920
+      }
+    }
   }
 ]

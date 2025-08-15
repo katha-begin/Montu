@@ -17,10 +17,15 @@ The Montu Manager ecosystem consists of four integrated applications:
 **Target Users**: All personas (RIN - Junior Artist, KEN - Pipeline TD, MAYA - Supervisor)
 **Key Features**: Project navigation, task assignment, version control, file operations
 
-### 2. **Task Creator** (CSV Import Tool)
-**Primary Role**: Bulk task creation and project setup
-**Target Users**: Pipeline TDs and supervisors
-**Key Features**: CSV parsing, data validation, batch task creation, error handling
+### 2. **Task Creator** (Ra: Enhanced Project & Task Management)
+**Primary Role**: Comprehensive project lifecycle management and bulk task creation
+**Target Users**: Pipeline TDs, supervisors, and project managers
+**Key Features**:
+- **Project Management**: Create, edit, and archive project configurations
+- **Media Configuration**: Resolution, format, and frame rate management
+- **Template Customization**: Filename patterns and path templates
+- **Task Management**: CSV parsing, data validation, batch task creation
+- **Archive System**: Complete project lifecycle with archive/restore capabilities
 
 ### 3. **DCC Integration Suite** (Plugin System)
 **Primary Role**: In-application workflows for artists
@@ -50,10 +55,13 @@ The Montu Manager ecosystem consists of four integrated applications:
 
 ### Project Configuration
 
-* Defined via database per project
-* Shot and asset folder templates
-* Output root per platform (Windows/Linux)
-* Media root configuration
+* **Enhanced Project Management**: Complete project lifecycle with creation, editing, and archival
+* **Media Configuration**: Resolution settings, format selection, and frame rate management
+* **Template Customization**: Configurable filename patterns and path templates
+* **Archive System**: Project archival with system-wide filtering and restoration
+* **Database-driven**: All configurations stored in centralized database
+* **Platform Support**: Output roots configurable per platform (Windows/Linux)
+* **Validation**: Real-time validation for all configuration parameters
 
 ### Media & Review System
 

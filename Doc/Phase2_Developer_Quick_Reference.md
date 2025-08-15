@@ -434,6 +434,60 @@ WINDOWS_DRIVES = {
 
 ---
 
-**Quick Reference Status**: ✅ READY FOR PHASE 2 DEVELOPMENT  
-**Last Updated**: August 3, 2025  
-**Next Phase**: Project Launcher GUI Implementation
+## 🆕 Ra: Task Creator Enhanced Features (NEW)
+
+### ✅ **Enhanced Project Management**
+- **Complete Project Creation**: Comprehensive project configuration with media settings, templates, and validation
+- **Media Format Configuration**: Resolution settings (4K UHD, 4K DCI, 2K DCI, HD 1080p, HD 720p, Custom), format selection (EXR, MOV, MP4, MXF, TIFF, DPX, JPEG, PNG), and frame rate management (23.976-60 fps)
+- **Template Customization**: Editable filename patterns and path templates with real-time validation and preview functionality
+- **Project Editing System**: Complete project modification with pre-populated forms, change tracking, and validation
+- **Project Archival System**: Archive/unarchive projects with system-wide filtering and visual indicators
+- **Enhanced UI**: Project Management tab with context menus, selection handling, and detailed project views
+
+### Enhanced Database Operations
+```python
+# Get active (non-archived) projects
+active_projects = db.get_active_projects()
+
+# Archive project
+archive_data = {
+    'archived': True,
+    'archived_at': datetime.now().isoformat(),
+    'archived_by': 'Application Name'
+}
+db.update_one('project_configs', {'_id': project_id}, {'$set': archive_data})
+
+# Enhanced project configuration with media settings
+project_config = {
+    # ... existing fields ...
+    "media_configuration": {
+        "final_delivery_resolution": {"width": 4096, "height": 2160, "name": "4K DCI"},
+        "daily_review_resolution": {"width": 1920, "height": 1080, "name": "HD 1080p"},
+        "final_delivery_formats": ["exr", "mov", "dpx"],
+        "daily_review_formats": ["mov", "jpeg"],
+        "default_frame_rate": 24
+    },
+    "archived": False
+}
+```
+
+### Enhanced File Structure
+```
+src/montu/task_creator/gui/
+├── main_window.py                    # Enhanced with editing and archival
+├── project_creation_dialog.py       # Enhanced with media configuration
+├── project_edit_dialog.py          # NEW: Project editing dialog
+└── ...
+```
+
+### Integration Notes for Phase 2
+- **Archive Filtering**: Use `db.get_active_projects()` instead of `db.find('project_configs')` to exclude archived projects
+- **Media Configuration**: Access media settings via `project_config['media_configuration']` for resolution and format information
+- **Template Validation**: Enhanced projects may have custom filename patterns and path templates
+- **Project Editing**: Projects can be modified after creation (except Project ID)
+
+---
+
+**Quick Reference Status**: ✅ READY FOR PHASE 2 DEVELOPMENT
+**Last Updated**: January 15, 2025 (Enhanced Features Added)
+**Next Phase**: Project Launcher GUI Implementation with Enhanced Project Support
