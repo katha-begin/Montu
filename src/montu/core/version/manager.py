@@ -12,7 +12,7 @@ from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass
 from enum import Enum
 
-from .json_database import JSONDatabase
+from ..data.database import JSONDatabase
 
 
 class VersionStatus(Enum):
