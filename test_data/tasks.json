@@ -215,5 +215,92 @@
     "task": "lighting",
     "_created_at": "2025-08-07T12:49:38.637953",
     "_updated_at": "2025-08-07T12:49:38.637953"
+  },
+  {
+    "_id": "ep01_sq010_sh020_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq010",
+    "shot": "sh020",
+    "task": "animation",
+    "_created_at": "2025-08-19T09:01:50.749772",
+    "_updated_at": "2025-08-19T09:01:50.749772"
+  },
+  {
+    "_id": "ep01_sq010_sh030_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq010",
+    "shot": "sh030",
+    "task": "animation",
+    "_created_at": "2025-08-19T09:01:50.758538",
+    "_updated_at": "2025-08-19T09:01:50.758538"
+  },
+  {
+    "_id": "ep01_sq020_sh010_lighting",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep01",
+    "sequence": "sq020",
+    "shot": "sh010",
+    "task": "lighting",
+    "_created_at": "2025-08-19T09:01:50.772250",
+    "_updated_at": "2025-08-19T09:01:50.772250"
+  },
+  {
+    "_id": "ep02_sq030_sh040_composite",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep02",
+    "sequence": "sq030",
+    "shot": "sh040",
+    "task": "composite",
+    "_created_at": "2025-08-19T09:01:50.782940",
+    "_updated_at": "2025-08-19T09:01:50.782940"
+  },
+  {
+    "_id": "ep02_sq040_sh050_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep02",
+    "sequence": "sq040",
+    "shot": "sh050",
+    "task": "animation",
+    "_created_at": "2025-08-19T09:01:50.845876",
+    "_updated_at": "2025-08-19T09:01:50.845876"
+  },
+  {
+    "_id": "asset_character_hero_modeling",
+    "project_id": "test_project_001",
+    "type": "asset",
+    "category": "character",
+    "asset_name": "hero",
+    "task": "modeling",
+    "_created_at": "2025-08-19T09:01:50.858398",
+    "_updated_at": "2025-08-19T09:01:50.858398"
+  },
+  {
+    "_id": "ep03_sq005_sh010_animation",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep03",
+    "sequence": "sq005",
+    "shot": "sh010",
+    "task": "animation",
+    "_created_at": "2025-08-19T09:01:50.964077",
+    "_updated_at": "2025-08-19T09:01:50.964077"
+  },
+  {
+    "_id": "ep10_sq100_sh001_lighting",
+    "project_id": "test_project_001",
+    "type": "shot",
+    "episode": "Ep10",
+    "sequence": "sq100",
+    "shot": "sh001",
+    "task": "lighting",
+    "_created_at": "2025-08-19T09:01:50.971597",
+    "_updated_at": "2025-08-19T09:01:50.971597"
   }
 ]

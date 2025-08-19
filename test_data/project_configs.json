@@ -30,5 +30,21 @@
     "status": "active",
     "_created_at": "2025-08-07T12:49:38.659517",
     "_updated_at": "2025-08-07T12:49:38.659517"
+  },
+  {
+    "_id": "test_project_001",
+    "name": "Test Project",
+    "abbreviation": "TP",
+    "status": "active",
+    "_created_at": "2025-08-19T09:01:50.468380",
+    "_updated_at": "2025-08-19T09:01:50.468380"
+  },
+  {
+    "_id": "empty_project_001",
+    "name": "Empty Project",
+    "abbreviation": "EP",
+    "status": "active",
+    "_created_at": "2025-08-19T09:01:50.981697",
+    "_updated_at": "2025-08-19T09:01:50.981697"
   }
 ]
