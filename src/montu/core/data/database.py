@@ -31,7 +31,8 @@ class JSONDatabase:
         """
         if data_dir is None:
             # Default to data/json_db in project root
-            project_root = Path(__file__).parent.parent.parent.parent
+            # Path: src/montu/core/data/database.py -> project root
+            project_root = Path(__file__).parent.parent.parent.parent.parent
             data_dir = project_root / "data" / "json_db"
 
         self.data_dir = Path(data_dir)
