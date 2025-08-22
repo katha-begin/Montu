@@ -14,7 +14,7 @@ from typing import List, Optional
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from .commands import TaskCommands, ProjectCommands, MediaCommands
+from .core.commands import TaskCommands, ProjectCommands, MediaCommands
 
 
 def create_parser() -> argparse.ArgumentParser:

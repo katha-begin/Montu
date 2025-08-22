@@ -15,7 +15,7 @@ from dataclasses import dataclass, asdict
 
 # Add src to path for imports
 import sys
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
 from montu.shared.path_builder import PathBuilder
 from montu.shared.json_database import JSONDatabase

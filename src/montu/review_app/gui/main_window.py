@@ -26,7 +26,7 @@ from .approval_widget import ApprovalWidget
 from .filter_widget import FilterWidget
 from .grouped_media_widget import GroupedMediaWidget
 from .collapsible_panel import CollapsiblePanelContainer
-from ..models.review_model import ReviewModel
+from ..core.models.review_model import ReviewModel
 
 
 class ReviewAppMainWindow(QMainWindow):

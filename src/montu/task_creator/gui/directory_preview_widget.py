@@ -20,7 +20,7 @@ from PySide6.QtGui import QFont, QIcon, QColor, QBrush, QPalette
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
-from ..directory_manager import DirectoryManager, DirectoryPreview
+from ..core.directory_manager import DirectoryManager, DirectoryPreview
 
 
 class CollapsibleGroupBox(QGroupBox):

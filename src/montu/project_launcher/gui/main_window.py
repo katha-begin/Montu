@@ -23,7 +23,7 @@ from .project_selector import ProjectSelector
 from .task_list_widget import TaskListWidget
 from .file_browser_widget import FileBrowserWidget
 from .version_notes_widget import VersionNotesWidget
-from ..models.project_model import ProjectModel
+from ..core.models.project_model import ProjectModel
 
 
 class ProjectLauncherMainWindow(QMainWindow):

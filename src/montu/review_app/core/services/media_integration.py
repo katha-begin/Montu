@@ -10,8 +10,8 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 from datetime import datetime
 
-from ...shared.json_database import JSONDatabase
-from ...shared.media_service import MediaService, LocalFileSystemBackend
+from ....shared.json_database import JSONDatabase
+from ....shared.media_service import MediaService, LocalFileSystemBackend
 
 
 class ReviewMediaService:

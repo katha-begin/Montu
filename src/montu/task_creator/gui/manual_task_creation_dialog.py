@@ -25,7 +25,7 @@ from PySide6.QtCore import Qt, Signal, QTimer
 from PySide6.QtGui import QFont, QIcon, QColor, QPalette
 
 # Import directory manager for automatic directory creation
-from ..directory_manager import DirectoryManager
+from ..core.directory_manager import DirectoryManager
 
 
 class ManualTaskCreationDialog(QDialog):

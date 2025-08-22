@@ -31,7 +31,7 @@ from .manual_task_creation_dialog import ManualTaskCreationDialog
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 from montu.shared.json_database import JSONDatabase
-from ..directory_manager import DirectoryManager
+from ..core.directory_manager import DirectoryManager
 
 
 class TaskImportWorker(QThread):
