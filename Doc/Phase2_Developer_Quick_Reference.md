@@ -22,12 +22,12 @@ python3 -c "from src.montu.shared.json_database import JSONDatabase; db = JSONDa
 
 ### Import Statements for GUI Development
 ```python
-# Core database and path generation
-from montu.shared.json_database import JSONDatabase
-from montu.shared.path_builder import PathBuilder
+# Core database and path generation (NEW LOCATIONS)
+from montu.core.data.database import JSONDatabase
+from montu.core.path.builder import PathBuilder
 
 # Task Creator components (for reference)
-from montu.task_creator.csv_parser import CSVParser, TaskRecord
+from montu.shared.parsers.csv_parser import CSVParser, TaskRecord
 ```
 
 ---

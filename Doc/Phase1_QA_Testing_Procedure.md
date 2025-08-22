@@ -356,7 +356,9 @@ File Type Generation Test:
 ```python
 # Command to execute
 python3 -c "
-from src.montu.shared.json_database import JSONDatabase
+import sys
+sys.path.insert(0, 'src')
+from montu.core.data.database import JSONDatabase
 
 db = JSONDatabase()
 stats = db.get_stats()
@@ -1040,7 +1042,7 @@ python3 scripts/test-path-generation.py --verbose
 python3 -c "from src.montu.shared.json_database import JSONDatabase; print(JSONDatabase().get_stats())"
 
 # Verify project configuration
-python3 -c "from src.montu.shared.json_database import JSONDatabase; print(JSONDatabase().validate_project_config('SWA'))"
+python3 -c "import sys; sys.path.insert(0, 'src'); from montu.core.data.database import JSONDatabase; print(JSONDatabase().validate_project_config('SWA'))"
 ```
 
 ---

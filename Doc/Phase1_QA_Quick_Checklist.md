@@ -50,7 +50,9 @@ print('Match:', working.replace(chr(92), '/') == 'V:/SWA/all/scene/Ep00/sq0020/S
 ### 4. Database Operations Check (2 minutes)
 ```python
 python3 -c "
-from src.montu.shared.json_database import JSONDatabase
+import sys
+sys.path.insert(0, 'src')
+from montu.core.data.database import JSONDatabase
 db = JSONDatabase()
 stats = db.get_stats()
 print('Database Stats:', stats)
@@ -101,14 +103,16 @@ docker logs montu-mongodb
 ### Path Generation Issues
 ```python
 # Check project configuration
-python3 -c "from src.montu.shared.json_database import JSONDatabase; print(JSONDatabase().validate_project_config('SWA'))"
+python3 -c "import sys; sys.path.insert(0, 'src'); from montu.core.data.database import JSONDatabase; print(JSONDatabase().validate_project_config('SWA'))"
 ```
 
 ### Database Issues
 ```python
 # Reinitialize database
 python3 -c "
-from src.montu.shared.json_database import JSONDatabase
+import sys
+sys.path.insert(0, 'src')
+from montu.core.data.database import JSONDatabase
 db = JSONDatabase()
 print('Collections:', list(db.collections.keys()))
 "
